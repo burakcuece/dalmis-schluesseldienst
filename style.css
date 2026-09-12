@@ -2693,6 +2693,14 @@ h3 {
   color: #111;
 }
 
+.reference-layout .brand-mark svg {
+  color: #111;
+}
+
+.reference-layout .brand-mark svg > path:first-child {
+  fill: #111;
+}
+
 .reference-layout .brand-mark .brand-key {
   color: #f5c400;
   fill: #f5c400;
@@ -2830,9 +2838,10 @@ h3 {
 .reference-layout .hero h1 span {
   display: block;
   color: #fff;
-  font-size: clamp(2.85rem, 14vw, 5.3rem);
+  font-size: clamp(2.05rem, 10.5vw, 5.3rem);
   font-weight: 900;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
   text-transform: uppercase;
   text-shadow: 0 10px 25px rgba(98, 73, 0, 0.14);
 }
@@ -3322,6 +3331,7 @@ h3 {
 }
 
 .reference-layout .owner-section {
+  color: #17232e;
   background: #fff;
 }
 
@@ -3355,6 +3365,29 @@ h3 {
 
 .reference-layout .owner-copy h2 {
   color: #17232e;
+}
+
+.reference-layout .owner-copy > p {
+  color: #66727b;
+}
+
+.reference-layout .owner-copy .feature-lead {
+  color: #27343e;
+}
+
+.reference-layout .owner-contact a {
+  color: #17232e;
+  background: #f7f9fa;
+  border-color: #dfe5e8;
+}
+
+.reference-layout .owner-contact a:hover {
+  background: #fff;
+  border-color: #f5c400;
+}
+
+.reference-layout .owner-contact small {
+  color: #7b858d;
 }
 
 .reference-layout .reasons-section {
@@ -3655,7 +3688,7 @@ h3 {
   }
 
   .reference-layout .hero h1 span {
-    font-size: 2.6rem;
+    font-size: 2.05rem;
   }
 
   .reference-layout .hero h1 strong {
