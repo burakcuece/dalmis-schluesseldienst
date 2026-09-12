@@ -2820,7 +2820,7 @@ h3 {
 }
 
 .reference-layout .hero h1 {
-  max-width: 12ch;
+  max-width: 650px;
   margin-bottom: 0.75rem;
   color: #111;
   font-size: inherit;
@@ -2839,7 +2839,7 @@ h3 {
 
 .reference-layout .hero h1 strong {
   display: block;
-  max-width: 12ch;
+  max-width: 15ch;
   margin-top: 0.25rem;
   font-size: clamp(2rem, 8.5vw, 3.65rem);
   font-weight: 850;
