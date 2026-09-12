@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 680" role="img" aria-labelledby="title desc">
+  <title id="title">DALMIS mobiler Schlüsseldienst</title>
+  <desc id="desc">Facettierte Illustration aus Schloss, Tür, Werkzeug und einem mobilen Servicefahrzeug</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe36a"/>
+      <stop offset="0.48" stop-color="#f5c400"/>
+      <stop offset="1" stop-color="#b98d00"/>
+    </linearGradient>
+    <linearGradient id="goldDeep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c69a00"/>
+      <stop offset="1" stop-color="#7c5e00"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#dddeda"/>
+      <stop offset="1" stop-color="#979994"/>
+    </linearGradient>
+    <linearGradient id="paperDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#70716d"/>
+      <stop offset="1" stop-color="#2d2e2c"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#f5c400" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#f5c400" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="25" stdDeviation="22" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".32"/>
+    </filter>
+  </defs>
+
+  <circle cx="391" cy="334" r="285" fill="url(#halo)"/>
+  <path d="M75 500C190 411 278 393 350 406c92 17 155 88 291 88" fill="none" stroke="#f5c400" stroke-opacity=".32" stroke-width="2" stroke-dasharray="10 13"/>
+  <circle cx="77" cy="500" r="7" fill="#d92323"/>
+  <circle cx="640" cy="494" r="7" fill="#f5c400"/>
+
+  <!-- faceted door -->
+  <g filter="url(#smallShadow)" opacity=".94">
+    <path d="m92 229 171-79 8 315-178 55Z" fill="#e8e9e5"/>
+    <path d="m92 229 88 19 83-98Z" fill="#fff"/>
+    <path d="m92 229 88 19 1 239-88 33Z" fill="#bfc1bc"/>
+    <path d="m180 248 83-98 8 315-90 22Z" fill="url(#paper)"/>
+    <path d="m104 238 65 14-63 23Z" fill="#f5c400" opacity=".75"/>
+    <circle cx="230" cy="336" r="12" fill="#171717"/>
+    <circle cx="230" cy="336" r="4" fill="#f5c400"/>
+  </g>
+
+  <!-- primary shield and lock -->
+  <g filter="url(#shadow)">
+    <path d="m397 80 201 78v145c0 139-78 235-201 278-123-43-201-139-201-278V158Z" fill="url(#gold)"/>
+    <path d="m397 80 201 78-201 62-201-62Z" fill="#ffe67a"/>
+    <path d="m397 220 201-62v145c0 139-78 235-201 278Z" fill="#d5a700"/>
+    <path d="m397 220-201-62v145c0 139 78 235 201 278Z" fill="#f5c400"/>
+    <path d="M397 98v120l178-55Z" fill="#ffef9d" opacity=".48"/>
+    <path d="m397 220 178-55-62 83Z" fill="#be9000" opacity=".54"/>
+    <path d="m397 220-178-55 72 92Z" fill="#fff2aa" opacity=".34"/>
+    <path d="m397 560-104-78 104-262Z" fill="#e8b600" opacity=".7"/>
+    <path d="m397 560 104-78-104-262Z" fill="#b98d00" opacity=".72"/>
+
+    <path d="M333 324v-35c0-40 26-71 64-71s64 31 64 71v35" fill="none" stroke="#171717" stroke-width="32" stroke-linecap="round"/>
+    <path d="M310 305h174c15 0 27 12 27 27v132c0 15-12 27-27 27H310c-15 0-27-12-27-27V332c0-15 12-27 27-27Z" fill="#171717"/>
+    <path d="m283 332 114-27 114 27-114 28Z" fill="#292929"/>
+    <path d="M397 360v131H310c-15 0-27-12-27-27V332Z" fill="#202020"/>
+    <circle cx="397" cy="394" r="26" fill="#f5c400"/>
+    <path d="m383 454 14-53 14 53Z" fill="#f5c400"/>
+  </g>
+
+  <!-- metallic key -->
+  <g transform="rotate(-18 532 300)" filter="url(#smallShadow)">
+    <path d="M535 294a50 50 0 1 0-37 48l99 99h43v-43l-20-20h-32v-32h-32l-20-20a50 50 0 0 0-1-32Zm-48 18a20 20 0 1 1 0-40 20 20 0 0 1 0 40Z" fill="url(#paper)"/>
+    <path d="m522 329 118 112v-43l-20-20h-32v-32h-32l-20-20Z" fill="#a5a7a2"/>
+    <path d="M487 272a20 20 0 0 1 19 15l27-8a49 49 0 0 0-41-34Z" fill="#fff"/>
+  </g>
+
+  <!-- service van -->
+  <g transform="translate(388 515)" filter="url(#smallShadow)">
+    <path d="M5 49V15C5 7 11 1 19 1h120v77H34C18 78 5 65 5 49Z" fill="#f5c400"/>
+    <path d="M139 25h62l42 39v14H139Z" fill="#ddb000"/>
+    <path d="m153 34 38 1 25 25h-63Z" fill="#292929"/>
+    <path d="M24 14h93v45H24Z" fill="#171717" opacity=".92"/>
+    <path d="m69 22 13 7v15c0 11-7 20-17 24-10-4-17-13-17-24V29l17-7Z" fill="#f5c400"/>
+    <path d="M66 36a7 7 0 1 0-6 7v9h5v-4h5v-5a7 7 0 0 0-4-7Z" fill="#171717"/>
+    <circle cx="53" cy="79" r="20" fill="#efefec" stroke="#171717" stroke-width="7"/>
+    <circle cx="196" cy="79" r="20" fill="#efefec" stroke="#171717" stroke-width="7"/>
+    <circle cx="53" cy="79" r="6" fill="#f5c400"/>
+    <circle cx="196" cy="79" r="6" fill="#f5c400"/>
+  </g>
+
+  <!-- geometric foreground -->
+  <g opacity=".92">
+    <path d="m31 610 111-111 40 102-72 56Z" fill="#f4f4f1"/>
+    <path d="m31 610 79 47-80 12Z" fill="#a9aaa6"/>
+    <path d="m142 499 40 102 45-69Z" fill="#d2d3cf"/>
+    <path d="m592 576 61-75 58 134-119 20Z" fill="#dedfdb"/>
+    <path d="m653 501 58 134-68-58Z" fill="#999b97"/>
+    <path d="m592 576 51 1-51 78Z" fill="#fff"/>
+  </g>
+
+  <g transform="translate(48 90) rotate(-18)" filter="url(#smallShadow)">
+    <path d="m0 33 98-33-41 45Z" fill="#fff"/>
+    <path d="m0 33 57 12-21 22Z" fill="#bfc1bd"/>
+    <path d="M57 45 98 0 69 74Z" fill="#e8e9e5"/>
+    <path d="m36 67 21-22 12 29Z" fill="#898b87"/>
+  </g>
+</svg>

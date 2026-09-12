@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burakcuece.github.io/dalmis-schluesseldienst/sitemap.xml
