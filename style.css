@@ -2678,37 +2678,37 @@ h3 {
 }
 
 .reference-layout .site-header {
-  color: #111;
-  background: rgba(245, 196, 0, 0.91);
-  border-bottom-color: rgba(17, 17, 17, 0.11);
-  box-shadow: 0 8px 30px rgba(103, 76, 0, 0.08);
+  color: #fff;
+  background: rgba(17, 17, 17, 0.93);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
 }
 
 .reference-layout .site-header.is-scrolled {
-  background: rgba(255, 208, 0, 0.97);
-  box-shadow: 0 10px 34px rgba(77, 58, 0, 0.16);
+  background: rgba(17, 17, 17, 0.98);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.24);
 }
 
 .reference-layout .brand-mark {
-  color: #111;
+  color: #f5c400;
 }
 
 .reference-layout .brand-mark svg {
-  color: #111;
+  color: #f5c400;
 }
 
 .reference-layout .brand-mark svg > path:first-child {
-  fill: #111;
+  fill: #f5c400;
 }
 
 .reference-layout .brand-mark .brand-key {
-  color: #f5c400;
-  fill: #f5c400;
+  color: #111;
+  fill: #111;
 }
 
 .reference-layout .site-header .brand-copy strong,
 .reference-layout .site-header .brand-copy small {
-  color: #111;
+  color: #fff;
 }
 
 .reference-layout .site-header .brand-copy small {
@@ -2716,20 +2716,20 @@ h3 {
 }
 
 .reference-layout .main-nav {
-  color: #111;
-  background: #f5c400;
-  border-top-color: rgba(17, 17, 17, 0.12);
-  box-shadow: 0 18px 34px rgba(72, 54, 0, 0.2);
+  color: #fff;
+  background: #111;
+  border-top-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
 }
 
 .reference-layout .main-nav a:hover,
 .reference-layout .main-nav a:focus-visible {
-  color: #111;
-  background: rgba(255, 255, 255, 0.3);
+  color: #f5c400;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .reference-layout .service-status {
-  color: rgba(17, 17, 17, 0.7);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .reference-layout .service-status span {
@@ -2737,21 +2737,25 @@ h3 {
 }
 
 .reference-layout .header-call {
-  color: #fff;
-  background: #111;
-  box-shadow: 0 12px 25px rgba(17, 17, 17, 0.18);
+  color: #111;
+  background: #f5c400;
+  box-shadow: 0 12px 25px rgba(245, 196, 0, 0.2);
 }
 
 .reference-layout .header-call:hover {
   color: #111;
-  background: #fff;
+  background: #ffd000;
 }
 
 .reference-layout .header-phone-icon,
 .reference-layout .menu-toggle {
-  color: #111;
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(17, 17, 17, 0.2);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.reference-layout .header-phone-icon {
+  color: #f5c400;
 }
 
 .reference-layout .hero {
@@ -2760,15 +2764,15 @@ h3 {
   padding-bottom: 9.5rem;
   color: #111;
   background:
-    radial-gradient(circle at 74% 23%, rgba(255, 255, 255, 0.32), transparent 25%),
-    radial-gradient(circle at 14% 72%, rgba(217, 35, 35, 0.09), transparent 20%),
-    linear-gradient(135deg, #efb900 0%, #ffd325 52%, #e7ae00 100%);
+    radial-gradient(circle at 82% 28%, rgba(245, 196, 0, 0.3), transparent 30%),
+    radial-gradient(circle at 13% 74%, rgba(217, 35, 35, 0.045), transparent 21%),
+    linear-gradient(135deg, #f3f2ed 0%, #ffffff 54%, #e8ebec 100%);
 }
 
 .reference-layout .hero::before {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+    linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
@@ -2793,7 +2797,7 @@ h3 {
   right: -130px;
   width: 410px;
   height: 410px;
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(245, 196, 0, 0.32);
 }
 
 .reference-layout .hero-glow-two {
@@ -2801,7 +2805,7 @@ h3 {
   left: -110px;
   width: 430px;
   height: 430px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.17), transparent 68%);
+  background: radial-gradient(circle, rgba(245, 196, 0, 0.15), transparent 68%);
 }
 
 .reference-layout .hero-grid {
@@ -2837,13 +2841,16 @@ h3 {
 
 .reference-layout .hero h1 span {
   display: block;
-  color: #fff;
+  width: fit-content;
+  max-width: 100%;
+  color: #111;
+  background: linear-gradient(transparent 78%, rgba(245, 196, 0, 0.78) 78%);
   font-size: clamp(2.05rem, 10.5vw, 5.3rem);
   font-weight: 900;
   letter-spacing: -0.075em;
   white-space: nowrap;
   text-transform: uppercase;
-  text-shadow: 0 10px 25px rgba(98, 73, 0, 0.14);
+  text-shadow: none;
 }
 
 .reference-layout .hero h1 strong {
@@ -2857,7 +2864,7 @@ h3 {
 
 .reference-layout .hero-signature {
   margin: 0.95rem 0 1rem;
-  color: #fff;
+  color: #725a00;
   font-family: "Segoe Script", "Bradley Hand", cursive;
   font-size: clamp(1rem, 4.2vw, 1.55rem);
   font-weight: 700;
@@ -2868,7 +2875,7 @@ h3 {
 .reference-layout .hero-lead {
   max-width: 545px;
   margin-bottom: 1.3rem;
-  color: rgba(17, 17, 17, 0.72);
+  color: #525b61;
   font-size: clamp(0.95rem, 2.5vw, 1.08rem);
   line-height: 1.62;
 }
@@ -2885,25 +2892,30 @@ h3 {
 }
 
 .reference-layout .hero .button-primary {
-  color: #fff;
-  background: #111;
-  box-shadow: 0 15px 30px rgba(17, 17, 17, 0.19);
+  color: #111;
+  background: #f5c400;
+  box-shadow: 0 15px 30px rgba(245, 196, 0, 0.24);
 }
 
 .reference-layout .hero .button-primary:hover {
   color: #111;
-  background: #fff;
+  background: #ffd000;
 }
 
 .reference-layout .hero .button-whatsapp {
   color: #111;
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(17, 17, 17, 0.25);
+  background: #fff;
+  border-color: #d7dcde;
+  box-shadow: 0 12px 26px rgba(31, 49, 65, 0.09);
+}
+
+.reference-layout .hero .button-whatsapp svg {
+  color: #19a866;
 }
 
 .reference-layout .hero .button-whatsapp:hover {
   background: #fff;
-  border-color: #fff;
+  border-color: #19a866;
 }
 
 .reference-layout .hero-proofline {
@@ -2928,16 +2940,16 @@ h3 {
 }
 
 .reference-layout .hero-visual::before {
-  inset: 12% 4% 0;
-  background: radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.38), transparent 64%);
+  inset: 7% 0 0;
+  background: radial-gradient(circle at 50% 48%, rgba(245, 196, 0, 0.82) 0 38%, rgba(245, 196, 0, 0.2) 39% 57%, transparent 71%);
 }
 
 .reference-layout .hero-visual img {
-  filter: drop-shadow(0 28px 34px rgba(94, 70, 0, 0.28));
+  filter: drop-shadow(0 28px 34px rgba(17, 17, 17, 0.2));
 }
 
 .reference-layout .visual-orbit {
-  border-color: rgba(255, 255, 255, 0.37);
+  border-color: rgba(17, 17, 17, 0.14);
 }
 
 .quick-panel-section {
@@ -3155,8 +3167,8 @@ h3 {
   left: 0;
   height: 126px;
   background:
-    linear-gradient(150deg, transparent 0 42%, rgba(255, 255, 255, 0.2) 42% 61%, transparent 61%),
-    linear-gradient(35deg, #efb600 0 33%, #ffd328 33% 68%, #dba600 68%);
+    linear-gradient(150deg, transparent 0 42%, rgba(255, 255, 255, 0.5) 42% 61%, transparent 61%),
+    linear-gradient(35deg, #d8dcdd 0 33%, #f1f2ee 33% 68%, #c8cccd 68%);
   clip-path: polygon(0 0, 100% 0, 100% 77%, 78% 100%, 48% 82%, 20% 100%, 0 77%);
   content: "";
 }
@@ -3413,29 +3425,29 @@ h3 {
 }
 
 .reference-layout .reviews-panel {
-  color: #111;
+  color: #fff;
   background:
-    linear-gradient(135deg, transparent 0 70%, rgba(255, 255, 255, 0.2) 70% 85%, transparent 85%),
-    linear-gradient(125deg, #e9b100, #ffd530);
+    radial-gradient(circle at 88% 20%, rgba(245, 196, 0, 0.18), transparent 28%),
+    linear-gradient(125deg, #111, #242424);
   border: 0;
   border-radius: 25px;
-  box-shadow: 0 19px 42px rgba(79, 60, 0, 0.17);
+  box-shadow: 0 19px 42px rgba(17, 17, 17, 0.18);
 }
 
 .reference-layout .reviews-panel h2,
 .reference-layout .reviews-panel p {
-  color: #111;
+  color: #fff;
 }
 
 .reference-layout .reviews-icon {
   color: #111;
-  background: #fff;
+  background: #f5c400;
 }
 
 .reference-layout .review-placeholder {
-  color: #fff;
-  background: #111;
-  border-color: #111;
+  color: #111;
+  background: #fff;
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .reference-layout .review-placeholder svg {
@@ -3574,7 +3586,7 @@ h3 {
 
 @media (min-width: 1024px) {
   .reference-layout .site-header {
-    background: rgba(245, 196, 0, 0.9);
+    background: rgba(17, 17, 17, 0.93);
   }
 
   .reference-layout .main-nav {
@@ -3584,18 +3596,18 @@ h3 {
   }
 
   .reference-layout .main-nav a {
-    color: rgba(17, 17, 17, 0.74);
+    color: rgba(255, 255, 255, 0.74);
     font-size: clamp(0.67rem, 0.77vw, 0.8rem);
   }
 
   .reference-layout .main-nav a:hover,
   .reference-layout .main-nav a:focus-visible {
-    color: #111;
+    color: #f5c400;
     background: transparent;
   }
 
   .reference-layout .main-nav a::after {
-    background: #111;
+    background: #f5c400;
   }
 
   .reference-layout .hero {
