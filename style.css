@@ -2673,6 +2673,10 @@ h3 {
   font-size: clamp(2rem, 6vw, 3.55rem);
 }
 
+.reference-layout .eyebrow-dark {
+  color: #6d5900;
+}
+
 .reference-layout .section {
   padding-block: clamp(4.25rem, 8vw, 7rem);
 }
@@ -3048,7 +3052,7 @@ h3 {
 .quick-field small,
 .quick-submit small {
   margin-bottom: 0.25rem;
-  color: #8a939a;
+  color: #5c6770;
   font-size: 0.61rem;
   font-weight: 700;
 }
@@ -3121,7 +3125,7 @@ h3 {
 }
 
 .reference-layout .trust-grid small {
-  color: #7b858d;
+  color: #5d6770;
 }
 
 .reference-layout .prices-section {
@@ -3263,7 +3267,7 @@ h3 {
 }
 
 .reference-layout .step-number {
-  color: #d0d6da;
+  color: #727d84;
 }
 
 .reference-layout .mobile-service-section {
@@ -3342,6 +3346,14 @@ h3 {
   border-color: #f5c400;
 }
 
+.reference-layout .service-card-number {
+  color: #5f6970;
+}
+
+.reference-layout .service-card-main .service-card-number {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 .reference-layout .owner-section {
   color: #17232e;
   background: #fff;
@@ -3369,6 +3381,18 @@ h3 {
 .reference-layout .owner-card-copy {
   color: #111;
   background: rgba(255, 255, 255, 0.9);
+}
+
+.reference-layout .owner-card-copy span {
+  color: #6d5900;
+}
+
+.reference-layout .owner-card-copy strong {
+  color: #111;
+}
+
+.reference-layout .owner-card-copy small {
+  color: #515c64;
 }
 
 .reference-layout .owner-key {
@@ -3399,7 +3423,7 @@ h3 {
 }
 
 .reference-layout .owner-contact small {
-  color: #7b858d;
+  color: #59636b;
 }
 
 .reference-layout .reasons-section {
@@ -3483,7 +3507,26 @@ h3 {
 }
 
 .reference-layout .site-footer {
+  color: rgba(255, 255, 255, 0.76);
   background: #0d0d0d;
+}
+
+.reference-layout .site-footer .footer-column h2 {
+  margin-bottom: 0.85rem;
+  color: #f5c400;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.reference-layout .site-footer .footer-brand > small,
+.reference-layout .site-footer .footer-column p,
+.reference-layout .site-footer .footer-column a,
+.reference-layout .site-footer .footer-column address span,
+.reference-layout .site-footer .footer-bottom {
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .reference-layout .mobile-cta {
