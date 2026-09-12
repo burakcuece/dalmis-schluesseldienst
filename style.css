@@ -2839,7 +2839,7 @@ h3 {
 
 .reference-layout .hero h1 strong {
   display: block;
-  max-width: 15ch;
+  max-width: none;
   margin-top: 0.25rem;
   font-size: clamp(2rem, 8.5vw, 3.65rem);
   font-weight: 850;
@@ -3583,6 +3583,7 @@ h3 {
   }
 
   .reference-layout .hero h1 strong {
+    max-width: 15ch;
     font-size: clamp(2.75rem, 4vw, 3.75rem);
   }
 
