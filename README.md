@@ -14,7 +14,7 @@ Statische, responsive Website für DALMIS aus Herten. Das Projekt funktioniert o
 
 Die vollständige ladungsfähige Anschrift und gegebenenfalls weitere gesetzliche Pflichtangaben müssen durch das Unternehmen ergänzt und rechtlich geprüft werden. Nicht bestätigte Aussagen wie 24/7 Erreichbarkeit, feste Anfahrtszeiten, Festpreise, Kartenzahlung, Bewertungen oder Tresoröffnungen wurden bewusst nicht als Fakten veröffentlicht. Autoöffnungen wurden auf Kundenwunsch als Leistung ergänzt. Konkrete Fahrzeugmodelle, Preise und Vorgehensweisen sind vor dem Einsatz abzustimmen.
 
-Die drei WebP Bildmotive in `assets/` sind generierte Beispieldarstellungen. Sie zeigen weder Serhat Dalmis noch echte Kundenfahrzeuge oder tatsächliche Ausrüstung des Unternehmens. Vor einer finalen Kundenfreigabe können sie durch authentische Einsatzfotos ersetzt werden.
+Die WebP Bildmotive in `assets/` sind generierte Beispieldarstellungen, auch die fünf zusätzlichen Servicebilder. Sie zeigen weder Serhat Dalmis noch echte Kundenfahrzeuge oder tatsächliche Ausrüstung des Unternehmens. Vor einer finalen Kundenfreigabe sollten sie durch authentische Einsatzfotos ersetzt werden. Der Bewertungsbereich bleibt verborgen, bis echte Bewertungen vorliegen.
 
 ## GitHub Pages
 
