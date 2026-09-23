@@ -24,10 +24,11 @@
     stage.style.transform='scale('+scale+')';
     document.getElementById('label').textContent=width+' px · Maßstab '+Math.round(scale*100)+' %';
     const section=new URLSearchParams(location.search).get('section');
-    if(section){frame.addEventListener('load',()=>{
-      const target=frame.contentDocument?.getElementById(section);
+    frame.addEventListener('load',()=>{
+      frame.contentDocument.documentElement.style.scrollbarWidth='none';
+      const target=section&&frame.contentDocument.getElementById(section);
       target?.scrollIntoView({block:'start',behavior:'instant'});
-    });}
+    });
   </script>
 </body>
 </html>
