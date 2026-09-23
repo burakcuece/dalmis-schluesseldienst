@@ -4224,21 +4224,18 @@ h3 {
 }
 
 .reference-layout .prices-section > .container {
-  padding: 0;
-  background: transparent;
+  padding: clamp(1.35rem, 4vw, 3rem);
+  color: #fff;
+  background: #191919;
   border: 0;
-  border-radius: 0;
+  border-left: 5px solid var(--yellow);
+  border-radius: 17px;
   box-shadow: none;
 }
 
 .price-clarity {
   display: grid;
   gap: 1.25rem;
-  padding: clamp(1.35rem, 4vw, 3rem);
-  color: #fff;
-  background: #191919;
-  border-left: 5px solid var(--yellow);
-  border-radius: 17px;
 }
 
 .reference-layout .price-clarity h2 {
