@@ -750,31 +750,56 @@ h3 {
 .trust-strip {
   color: var(--white);
   background: var(--black);
+  border-top: 4px solid var(--yellow);
 }
 
 .trust-strip ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem 1rem;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 0;
   list-style: none;
 }
 
 .trust-strip li {
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1.35;
+  gap: 0.7rem;
+  padding: 1.1rem 0.9rem 1.1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.trust-strip li:nth-child(even) {
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.trust-strip li:nth-last-child(-n + 2) {
+  border-bottom: 0;
 }
 
 .trust-strip svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   flex: 0 0 auto;
+  margin-top: 0.1rem;
   color: var(--yellow);
+}
+
+.trust-strip span {
+  display: grid;
+  gap: 0.15rem;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.trust-strip strong {
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .quick-head {
@@ -2147,13 +2172,23 @@ h3 {
   }
 
   .trust-strip ul {
-    grid-template-columns: repeat(4, auto);
-    justify-content: space-between;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .trust-strip li {
-    align-items: center;
-    font-size: 0.95rem;
+  .trust-strip li,
+  .trust-strip li:nth-child(even) {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  .trust-strip li:nth-child(n + 2) {
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .trust-strip span {
+    font-size: 0.92rem;
   }
 
   .footer-grid {
