@@ -46,7 +46,7 @@ Die Seite läuft auf Vercel. Ist das GitHub-Repository mit dem Vercel-Projekt ve
 
 Die Domain (für Canonical-URLs, Sitemap und `robots.txt`) übernimmt der Build automatisch von Vercel, auch eine später verbundene eigene Domain. Fest vorgeben lässt sie sich über die Umgebungsvariable `SITE_URL`.
 
-Weiterleitungen stehen in `vercel.json`: alte Adressen wie `impressum.html` und `/dalmis-schluesseldienst/…` von GitHub Pages leiten per 301 auf die neuen Pfade weiter.
+Weiterleitungen stehen in `vercel.json`: alte Adressen wie `impressum.html` leiten per 301 auf die neuen Pfade weiter.
 
 ## Vor der geschäftlichen Nutzung
 

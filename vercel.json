@@ -3,10 +3,20 @@
   "framework": "astro",
   "trailingSlash": true,
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/impressum.html", "destination": "/impressum/", "permanent": true },
-    { "source": "/datenschutz.html", "destination": "/datenschutz/", "permanent": true },
-    { "source": "/dalmis-schluesseldienst", "destination": "/", "permanent": true },
-    { "source": "/dalmis-schluesseldienst/:path*", "destination": "/:path*", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum.html",
+      "destination": "/impressum/",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz.html",
+      "destination": "/datenschutz/",
+      "permanent": true
+    }
   ]
 }
