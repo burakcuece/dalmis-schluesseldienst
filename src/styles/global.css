@@ -1192,8 +1192,19 @@ h3 {
   line-height: 1.15;
 }
 
-.area-places li:first-child {
+.area-places .area-home {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   color: var(--yellow);
+}
+
+.area-places .area-home small {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
 .area-places p {

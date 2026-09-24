@@ -31,7 +31,7 @@ const { showMoreLink = true } = Astro.props;
     </div>
     <div class="area-places">
       <ul aria-label="Orte, aus denen Anfragen kommen">
-        {business.places.map((place) => <li>{place}</li>)}
+        {business.places.map((place) => (place === business.city ? <li class="area-home">{place}<small>Firmensitz</small></li> : <li>{place}</li>))}
       </ul>
       <p>und Umgebung. Die Verfügbarkeit für Ihren Ort klären wir individuell.</p>
     </div>
