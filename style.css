@@ -4648,4 +4648,12 @@ h3 {
     height: 145px;
     min-height: 0;
   }
+
+  .reference-layout .brand-copy small {
+    max-width: 135px;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    line-height: 1.2;
+  }
 }
