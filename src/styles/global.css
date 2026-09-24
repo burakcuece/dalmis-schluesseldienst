@@ -1962,7 +1962,7 @@ h3 {
   }
 
   .owner-grid h2 {
-    max-width: 12ch;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
   }
 
   .area-grid {
