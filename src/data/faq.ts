@@ -103,9 +103,9 @@ export const faqs: FaqEntry[] = [
   {
     id: 'ansprechpartner',
     category: 'allgemein',
-    question: 'Mit wem spreche ich bei einer Anfrage?',
+    question: 'Wie erreiche ich DALMIS am schnellsten?',
     answer: [
-      'Direkt mit uns. DALMIS ist inhabergeführt, Ihre Anfrage landet nicht bei einem anonymen Vermittlungsportal.',
+      'Am schnellsten telefonisch. Per WhatsApp können Sie uns zusätzlich Ihren Standort und Fotos schicken. Anfragen, die nicht eilen, erreichen uns auch per E-Mail.',
     ],
   },
   {
