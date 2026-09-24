@@ -46,7 +46,7 @@ export const services: Service[] = [
   {
     slug: 'sicherheitstechnik',
     title: 'Sicherheitstechnik',
-    teaser: 'Welche Technik passt zu Ihrer Tür? Serhat Dalmis bespricht mögliche Lösungen mit Ihnen.',
+    teaser: 'Welche Technik passt zu Ihrer Tür? Wir besprechen mögliche Lösungen mit Ihnen.',
     image: 'service-security-hardware.webp',
     imageAlt: 'Sicherheitsbeschlag an einer Eingangstür',
     icon: 'shield',

@@ -18,13 +18,13 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
 
 <BaseLayout
   title={`Kontakt: Schlüsseldienst ${business.city} anrufen oder schreiben`}
-  description={`So erreichen Sie ${business.shortName} in ${business.city}: Telefon ${business.phone.display}, WhatsApp oder E-Mail. Sie sprechen direkt mit ${business.owner}.`}
+  description={`So erreichen Sie ${business.shortName} in ${business.city}: Telefon ${business.phone.display}, WhatsApp oder E-Mail. Ihre Anfrage landet direkt bei uns.`}
   path="kontakt/"
   crumbs={crumbs}
   schema={[faqSchema(entries, 'kontakt/')]}
 >
   <PageHero
-    title={`Kontakt zu ${business.owner}`}
+    title="So erreichen Sie uns"
     lead="Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine E-Mail. Schildern Sie kurz Ihr Anliegen und nennen Sie Ihren Standort."
     crumbs={crumbs}
     showActions={false}

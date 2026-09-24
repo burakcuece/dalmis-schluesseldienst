@@ -42,7 +42,7 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
         <p class="eyebrow">Mobiler Schlüsseldienst aus {business.city}</p>
         <h1><span>Ausgesperrt?</span><strong>Wir kommen direkt zu Ihnen.</strong></h1>
         <p class="hero-lead">
-          Ob Haustür, Fahrzeug oder Schloss: Bei {business.shortName} sprechen Sie direkt mit {business.owner}. Nennen Sie Ihren Standort und schildern Sie kurz, was passiert ist.
+          Ob Haustür, Fahrzeug oder Schloss: Nennen Sie uns Ihren Standort und schildern Sie kurz, was passiert ist.
         </p>
         <ContactButtons class="hero-actions" />
         <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
@@ -60,7 +60,7 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
     <div class="container">
       <div class="section-heading">
         <h2>Leistungen</h2>
-        <p>Vier Bereiche, ein Ansprechpartner. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
+        <p>Vier Bereiche, alles aus einer Hand. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
       </div>
       <div class="services-grid services-grid-4">
         {services.map((service) => <ServiceCard service={service} id={legacyIds[service.slug]} />)}
@@ -76,7 +76,7 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
       { title: 'Anrufen oder schreiben', text: 'Per Telefon oder WhatsApp. Sagen Sie, wo Sie sind und was passiert ist.' },
       { title: 'Preis erfahren', text: 'Sie hören den voraussichtlichen Preis und das Vorgehen, bevor jemand losfährt.' },
       { title: 'Entscheiden', text: 'Erst mit Ihrer Zusage wird der Einsatz fest vereinbart.' },
-      { title: 'Hilfe vor Ort', text: `${business.owner} kommt zu Ihnen und erledigt die Arbeit.` },
+      { title: 'Hilfe vor Ort', text: 'Wir kommen zu Ihnen und erledigen die Arbeit.' },
     ]}
   />
   <OwnerSection tone="white" />

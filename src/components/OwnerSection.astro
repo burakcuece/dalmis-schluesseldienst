@@ -13,12 +13,12 @@ const { showMoreLink = true, tone = 'light' } = Astro.props;
 
 <section class={`section section-${tone} owner-section`} id="ueber-uns">
   <div class="container owner-grid">
-    <h2>Sie sprechen mit {business.owner}</h2>
+    <h2>Direkt bei uns, ohne Vermittler</h2>
     <div class="owner-copy">
       <p class="feature-lead">
-        {business.shortName} ist inhabergeführt. Bei Ihrer Anfrage sprechen Sie direkt mit {business.owner}, nicht mit einem anonymen Vermittlungsportal.
+        {business.shortName} ist inhabergeführt. Ihre Anfrage landet direkt bei uns, nicht bei einem anonymen Vermittlungsportal.
       </p>
-      <p>Er kümmert sich um Anfragen zu Türen, Fahrzeugen und Sicherheitstechnik in {business.city} und Umgebung.</p>
+      <p>Wir kümmern uns um Anfragen zu Türen, Fahrzeugen und Sicherheitstechnik in {business.city} und Umgebung.</p>
       <dl class="owner-contact">
         <div><dt>Telefon</dt><dd><a href={business.phone.href}>{business.phone.display}</a></dd></div>
         <div><dt>E-Mail</dt><dd><a href={mailtoUrl}>{business.email}</a></dd></div>

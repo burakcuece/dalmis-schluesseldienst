@@ -40,7 +40,7 @@ export const faqs: FaqEntry[] = [
     category: 'gebiet',
     question: 'Kommt DALMIS auch nach Recklinghausen, Marl oder Gelsenkirchen?',
     answer: [
-      'Anfragen aus Recklinghausen, Marl, Gelsenkirchen, Dorsten und weiteren Orten rund um Herten sind möglich. Ob und wann ein Einsatz an Ihrem Standort möglich ist, klärt Serhat Dalmis direkt mit Ihnen.',
+      'Anfragen aus Recklinghausen, Marl, Gelsenkirchen, Dorsten und weiteren Orten rund um Herten sind möglich. Ob und wann ein Einsatz an Ihrem Standort möglich ist, klären wir direkt mit Ihnen.',
     ],
   },
   {
@@ -105,7 +105,7 @@ export const faqs: FaqEntry[] = [
     category: 'allgemein',
     question: 'Mit wem spreche ich bei einer Anfrage?',
     answer: [
-      'Direkt mit Serhat Dalmis. DALMIS ist inhabergeführt, Ihre Anfrage landet nicht bei einem anonymen Vermittlungsportal.',
+      'Direkt mit uns. DALMIS ist inhabergeführt, Ihre Anfrage landet nicht bei einem anonymen Vermittlungsportal.',
     ],
   },
   {
@@ -153,7 +153,7 @@ export const faqs: FaqEntry[] = [
     category: 'sicherheit',
     question: 'Welche Sicherheitstechnik passt zu meiner Tür?',
     answer: [
-      'Das hängt von Tür, Rahmen, vorhandenem Schloss und Ihrer Wohnsituation ab. Serhat Dalmis bespricht mit Ihnen, welche Lösungen für Ihre Tür in Frage kommen.',
+      'Das hängt von Tür, Rahmen, vorhandenem Schloss und Ihrer Wohnsituation ab. Wir besprechen mit Ihnen, welche Lösungen für Ihre Tür in Frage kommen.',
     ],
   },
 ];

@@ -1,6 +1,5 @@
 ---
 import ContactButtons from './ContactButtons.astro';
-import { business } from '../data/site';
 
 interface Props {
   title?: string;
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const {
-  title = `${business.owner} anrufen`,
+  title = 'Rufen Sie uns an',
   text = 'Schildern Sie kurz Ihr Anliegen und senden Sie bei Bedarf Ihren Standort.',
   whatsappText,
 } = Astro.props;
