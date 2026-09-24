@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -39,6 +40,8 @@ const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': grap
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#111111" />
     <meta name="color-scheme" content="light" />
+    <Font cssVariable="--font-display" preload={[{ subset: 'latin', weight: 800 }]} />
+    <Font cssVariable="--font-body" preload={[{ subset: 'latin', weight: 400 }]} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />

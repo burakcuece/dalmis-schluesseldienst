@@ -1,7 +1,6 @@
 ---
 import FinalCta from '../../components/FinalCta.astro';
 import PageHero from '../../components/PageHero.astro';
-import PriceClarity from '../../components/PriceClarity.astro';
 import ProcessSteps from '../../components/ProcessSteps.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -22,8 +21,7 @@ const crumbs: Crumb[] = [
   crumbs={crumbs}
 >
   <PageHero
-    eyebrow="Leistungen"
-    title="Vier Bereiche. Ein Ansprechpartner."
+    title="Leistungen"
     lead={`Von der zugefallenen Tür bis zur Beratung für mehr Sicherheit: Bei ${business.shortName} sprechen Sie immer direkt mit ${business.owner}.`}
     crumbs={crumbs}
   />
@@ -37,6 +35,5 @@ const crumbs: Crumb[] = [
   </section>
 
   <ProcessSteps />
-  <PriceClarity />
   <FinalCta />
 </BaseLayout>

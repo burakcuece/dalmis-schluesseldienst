@@ -1,4 +1,4 @@
-/** Navigation, Header-Zustand, FAQ-Akkordeon und Einblenden beim Scrollen. */
+/** Navigation, Header-Zustand und FAQ-Akkordeon. */
 
 const header = document.querySelector<HTMLElement>('[data-header]');
 const menuToggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
@@ -55,25 +55,5 @@ document.querySelectorAll<HTMLElement>('[data-accordion]').forEach((accordion) =
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
-
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealElements = document.querySelectorAll('.reveal');
-
-if (!reducedMotion && 'IntersectionObserver' in window) {
-  document.documentElement.classList.add('motion-ready');
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
-  );
-  revealElements.forEach((element) => revealObserver.observe(element));
-} else {
-  revealElements.forEach((element) => element.classList.add('is-visible'));
-}
 
 export {};

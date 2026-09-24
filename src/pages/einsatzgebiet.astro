@@ -25,8 +25,7 @@ const entries = getFaqs(['orte', 'orte-nachbarstaedte', 'whatsapp', 'angaben']);
   schema={[faqSchema(entries, 'einsatzgebiet/')]}
 >
   <PageHero
-    eyebrow="Einsatzgebiet"
-    title={`Mobiler Schlüsseldienst für ${business.city} und Umgebung.`}
+    title={`Schlüsseldienst für ${business.city} und Umgebung`}
     lead={`Firmensitz ist ${business.city}. Je nach Auftrag ist ${business.shortName} ungefähr ${business.radiusKm} Kilometer rund um ${business.city} unterwegs. Ob ein Einsatz an Ihrem Standort möglich ist, klären wir direkt mit Ihnen.`}
     crumbs={crumbs}
   />
@@ -35,9 +34,8 @@ const entries = getFaqs(['orte', 'orte-nachbarstaedte', 'whatsapp', 'angaben']);
 
   <section class="section section-white">
     <div class="container split">
-      <div class="prose reveal">
-        <p class="eyebrow eyebrow-dark">Standort mitteilen</p>
-        <h2>So finden wir schnell zu Ihnen.</h2>
+      <div class="prose">
+        <h2>So finden wir Sie</h2>
         <p>
           Je genauer Ihre Angaben, desto besser lässt sich der Einsatz planen. Am einfachsten senden Sie Ihren Standort direkt über
           WhatsApp.
@@ -48,17 +46,17 @@ const entries = getFaqs(['orte', 'orte-nachbarstaedte', 'whatsapp', 'angaben']);
           <li><Icon name="check" />Hinweise zum Zugang, z. B. Hinterhof oder Nebeneingang</li>
         </ul>
       </div>
-      <aside class="aside-card reveal">
+      <aside class="aside-card">
         <h2>Standort senden</h2>
         <p>Über WhatsApp öffnet sich ein Chat mit einer vorbereiteten Nachricht. Den Standort teilen Sie dort mit der Standortfunktion.</p>
         <a class="button button-primary button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
           <Icon name="whatsapp" />
-          <span><small>Standort senden</small>WhatsApp schreiben</span>
+          Standort per WhatsApp senden
         </a>
       </aside>
     </div>
   </section>
 
-  <FaqSection entries={entries} title="Fragen zum Einsatzgebiet." intro="Wo DALMIS unterwegs ist und wie Sie Ihren Standort mitteilen." />
+  <FaqSection entries={entries} title="Fragen zum Einsatzgebiet" intro="Wo DALMIS unterwegs ist und wie Sie Ihren Standort mitteilen." />
   <FinalCta />
 </BaseLayout>

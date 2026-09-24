@@ -6,8 +6,7 @@ import { url } from '../lib/url';
 ---
 
 <LegalLayout title="Seite nicht gefunden" description="Diese Seite wurde nicht gefunden." path="404/">
-  <p class="eyebrow eyebrow-dark">Fehler 404</p>
-  <h1>Diese Seite wurde nicht gefunden.</h1>
+  <h1>Diese Seite gibt es nicht</h1>
   <p>Vielleicht hilft Ihnen eine dieser Seiten weiter:</p>
   <ul>
     {mainNavigation.map((item) => <li><a href={url(item.path)}>{item.label}</a></li>)}

@@ -13,15 +13,14 @@ const service = getService('tueroeffnung');
   slug="tueroeffnung"
   metaTitle={`Türöffnung in ${business.city} – ausgesperrt?`}
   description={`Tür zugefallen oder abgeschlossen? ${business.shortName} öffnet Wohnungs- und Haustüren in ${business.city} und Umgebung. Preis und Vorgehen werden vorab abgestimmt.`}
-  heroTitle="Türöffnung: Ausgesperrt? Wir helfen weiter."
+  heroTitle={`Türöffnung in ${business.city} und Umgebung`}
   lead={`Die Tür ist ins Schloss gefallen oder abgeschlossen und der Schlüssel liegt drinnen? Rufen Sie an oder schreiben Sie per WhatsApp. ${business.owner} klärt mit Ihnen, wie es weitergeht.`}
   faqIds={['tuer-unterschied', 'tuer-nachweis', 'kosten-tuer', 'preis-wann', 'orte']}
-  faqTitle="Fragen zur Türöffnung."
+  faqTitle="Fragen zur Türöffnung"
 >
   <section class="section section-white">
     <div class="container split">
-      <div class="prose reveal">
-        <p class="eyebrow eyebrow-dark">Die Situation</p>
+      <div class="prose">
         <h2>Zugefallen oder abgeschlossen?</h2>
         <p>
           Für die Türöffnung macht es einen Unterschied, wie Ihre Tür verschlossen ist. Wenn Sie das bei der Anfrage sagen können,
@@ -29,12 +28,10 @@ const service = getService('tueroeffnung');
         </p>
         <ul class="info-grid">
           <li class="info-card">
-            <span class="info-card-icon"><Icon name="door" /></span>
             <h3>Tür zugefallen</h3>
             <p>Die Tür ist nur ins Schloss gefallen, die Falle ist eingerastet. Der Riegel wurde nicht mit dem Schlüssel vorgeschlossen.</p>
           </li>
           <li class="info-card">
-            <span class="info-card-icon"><Icon name="lock" /></span>
             <h3>Tür abgeschlossen</h3>
             <p>Der Riegel ist ausgefahren, weil die Tür mit dem Schlüssel abgeschlossen wurde. Das bedeutet meist mehr Aufwand.</p>
           </li>
@@ -48,7 +45,7 @@ const service = getService('tueroeffnung');
         </div>
       </div>
 
-      <aside class="aside-card reveal" aria-labelledby="tuer-angaben">
+      <aside class="aside-card" aria-labelledby="tuer-angaben">
         <h2 id="tuer-angaben">Das hilft bei Ihrer Anfrage</h2>
         <ul class="check-list">
           <li><Icon name="check" />Ihr Standort mit Adresse und gegebenenfalls Etage</li>
@@ -64,7 +61,7 @@ const service = getService('tueroeffnung');
 
   <ProcessSteps
     tone="light"
-    title="So läuft eine Türöffnung ab."
+    title="So läuft eine Türöffnung ab"
     steps={[
       { title: 'Kontakt aufnehmen', text: 'Anrufen oder per WhatsApp schreiben und den Standort nennen.' },
       { title: 'Situation schildern', text: 'Zugefallen oder abgeschlossen? Welche Tür? Kurz beschreiben, was passiert ist.' },

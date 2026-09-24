@@ -14,7 +14,7 @@ const { entries, idPrefix = 'faq' } = Astro.props;
   {entries.map((entry) => {
     const panelId = `${idPrefix}-${entry.id}`;
     return (
-      <article class="accordion-item reveal">
+      <article class="accordion-item">
         <h3>
           <button type="button" aria-expanded="false" aria-controls={panelId}>
             <span>{entry.question}</span>

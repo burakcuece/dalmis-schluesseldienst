@@ -40,6 +40,10 @@ public/              Bilder, Favicon, robots.txt, Manifest (werden unverändert 
 
 **Neue Frage ergänzen:** Eintrag in `src/data/faq.ts` anlegen. Sie erscheint automatisch auf der FAQ-Seite; auf anderen Seiten über ihre ID in `faqIds`.
 
+## Schriften
+
+Barlow Condensed (Überschriften) und Barlow (Text) kommen von Google Fonts, werden aber über die Font-API von Astro (`fonts` in `astro.config.mjs`) beim Build heruntergeladen und unter `/_astro/fonts/` von der eigenen Domain ausgeliefert. Besucher bauen keine Verbindung zu Google auf. Schriften deshalb nie per `<link>` auf `fonts.googleapis.com` einbinden (siehe LG München I, Az. 3 O 17493/20).
+
 ## Veröffentlichung
 
 Die Seite läuft auf Vercel. Ist das GitHub-Repository mit dem Vercel-Projekt verbunden, wird jeder Push auf `main` automatisch veröffentlicht, jeder andere Branch bekommt eine Vorschau-URL. Manuell geht es mit `vercel --prod`.

@@ -1,6 +1,5 @@
 ---
 import ContactButtons from '../../components/ContactButtons.astro';
-import Icon from '../../components/Icon.astro';
 import ProcessSteps from '../../components/ProcessSteps.astro';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { business } from '../../data/site';
@@ -13,34 +12,30 @@ const service = getService('sicherheitstechnik');
   slug="sicherheitstechnik"
   metaTitle={`Sicherheitstechnik für Türen in ${business.city}`}
   description={`Mehr Sicherheit an Ihrer Tür: ${business.shortName} berät in ${business.city} und Umgebung persönlich zu Schutzbeschlägen, Sicherheitszylindern und Zusatzsicherungen.`}
-  heroTitle="Sicherheitstechnik: mehr Schutz für Ihre Tür."
+  heroTitle="Sicherheitstechnik für Ihre Tür"
   lead={`Welche Technik passt zu Ihrer Tür? ${business.owner} bespricht mit Ihnen, welche Lösungen in Frage kommen, persönlich und passend zu Ihrer Situation.`}
   faqIds={['sicherheit-passend', 'schloss-wann', 'ansprechpartner', 'preis-wann']}
-  faqTitle="Fragen zur Sicherheitstechnik."
+  faqTitle="Fragen zur Sicherheitstechnik"
 >
   <section class="section section-white">
     <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow eyebrow-dark">Mögliche Ansätze</p>
-        <h2>Worauf es an der Tür ankommt.</h2>
+      <div class="section-heading">
+        <h2>Worauf es an der Tür ankommt</h2>
         <p>
           Schutz entsteht im Zusammenspiel von Tür, Rahmen, Schloss und Beschlag. Diese Bausteine sind häufig Thema der Beratung. Welche
           Lösung für Ihre Tür sinnvoll ist und was {business.shortName} konkret umsetzt, besprechen Sie direkt mit {business.owner}.
         </p>
       </div>
       <ul class="info-grid info-grid-3">
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="shield" /></span>
+        <li class="info-card">
           <h3>Schutzbeschlag</h3>
           <p>Ein Schutzbeschlag deckt den Schließzylinder außen ab und erschwert es, ihn abzubrechen oder herauszuziehen.</p>
         </li>
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="key" /></span>
+        <li class="info-card">
           <h3>Sicherheitszylinder</h3>
           <p>Hochwertige Zylinder bieten zum Beispiel Schutz gegen Aufbohren, Ziehen oder Nachschließen.</p>
         </li>
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="lock" /></span>
+        <li class="info-card">
           <h3>Zusatzsicherung</h3>
           <p>Zusatzschlösser oder Querriegel können die Tür an weiteren Punkten sichern, je nach Tür und Rahmen.</p>
         </li>
@@ -50,7 +45,7 @@ const service = getService('sicherheitstechnik');
 
   <ProcessSteps
     tone="light"
-    title="So läuft die Beratung ab."
+    title="So läuft die Beratung ab"
     steps={[
       { title: 'Anfrage stellen', text: 'Anrufen, per WhatsApp oder per E-Mail schreiben.' },
       { title: 'Tür beschreiben', text: 'Art der Tür, vorhandenes Schloss, gern mit Fotos.' },
@@ -61,7 +56,7 @@ const service = getService('sicherheitstechnik');
 
   <section class="section section-white section-compact">
     <div class="container">
-      <div class="aside-card reveal">
+      <div class="aside-card">
         <h2>Beratung anfragen</h2>
         <p>
           Schicken Sie gern Fotos Ihrer Tür von innen und außen per WhatsApp. So lässt sich schon vorab besser einschätzen, welche Lösungen

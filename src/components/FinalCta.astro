@@ -3,24 +3,21 @@ import ContactButtons from './ContactButtons.astro';
 import { business } from '../data/site';
 
 interface Props {
-  eyebrow?: string;
   title?: string;
   text?: string;
   whatsappText?: string;
 }
 
 const {
-  eyebrow = 'Direkt erreichbar',
-  title = `Jetzt mit ${business.owner} sprechen.`,
+  title = `${business.owner} anrufen`,
   text = 'Schildern Sie kurz Ihr Anliegen und senden Sie bei Bedarf Ihren Standort.',
   whatsappText,
 } = Astro.props;
 ---
 
 <section class="final-cta" id="kontakt">
-  <div class="container final-cta-inner reveal">
+  <div class="container final-cta-inner">
     <div>
-      <p class="eyebrow">{eyebrow}</p>
       <h2>{title}</h2>
       <p>{text}</p>
     </div>

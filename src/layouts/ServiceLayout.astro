@@ -8,7 +8,6 @@ import BaseLayout from './BaseLayout.astro';
 import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import PageHero from '../components/PageHero.astro';
-import PriceClarity from '../components/PriceClarity.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import { getFaqs } from '../data/faq';
 import { getService, servicePath, services, type Service } from '../data/services';
@@ -46,7 +45,6 @@ const crumbs: Crumb[] = [
   schema={[serviceSchema(service.title, description, path), faqSchema(entries, path)]}
 >
   <PageHero
-    eyebrow={`Leistung · ${service.title}`}
     title={heroTitle}
     lead={lead}
     crumbs={crumbs}
@@ -57,15 +55,12 @@ const crumbs: Crumb[] = [
 
   <slot />
 
-  <PriceClarity />
-
   <FaqSection class="section-white" entries={entries} title={faqTitle} intro="Antworten auf Fragen, die bei dieser Leistung häufig gestellt werden." />
 
   <section class="section section-light" aria-labelledby="weitere-leistungen">
     <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow eyebrow-dark">Weitere Leistungen</p>
-        <h2 id="weitere-leistungen">Auch dabei hilft DALMIS.</h2>
+      <div class="section-heading">
+        <h2 id="weitere-leistungen">Weitere Leistungen</h2>
       </div>
       <div class="services-grid services-grid-3">
         {related.map((entry) => <ServiceCard service={entry} variant="compact" />)}

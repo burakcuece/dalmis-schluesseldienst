@@ -24,8 +24,7 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
   schema={[faqSchema(entries, 'kontakt/')]}
 >
   <PageHero
-    eyebrow="Kontakt"
-    title={`Direkt mit ${business.owner} sprechen.`}
+    title={`Kontakt zu ${business.owner}`}
     lead="Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine E-Mail. Schildern Sie kurz Ihr Anliegen und nennen Sie Ihren Standort."
     crumbs={crumbs}
     showActions={false}
@@ -33,7 +32,7 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
 
   <section class="section section-light section-compact">
     <div class="container contact-grid">
-      <div class="contact-card contact-card-primary reveal">
+      <div class="contact-card contact-card-primary">
         <h2>Telefon</h2>
         <p>Bei dringenden Anliegen am besten direkt anrufen.</p>
         <p class="contact-value">{business.phone.display}</p>
@@ -42,7 +41,7 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
           Jetzt anrufen
         </a>
       </div>
-      <div class="contact-card reveal">
+      <div class="contact-card">
         <h2>WhatsApp</h2>
         <p>Standort teilen und bei Bedarf Fotos schicken. Eine Nachricht ist bereits vorbereitet.</p>
         <p class="contact-value">{business.phone.display}</p>
@@ -51,7 +50,7 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
           WhatsApp schreiben
         </a>
       </div>
-      <div class="contact-card reveal">
+      <div class="contact-card">
         <h2>E-Mail</h2>
         <p>Für Anfragen, die nicht eilen, zum Beispiel eine Beratung zur Sicherheitstechnik.</p>
         <p class="contact-value">{business.email}</p>
@@ -65,9 +64,8 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
 
   <section class="section section-white">
     <div class="container split">
-      <div class="prose reveal">
-        <p class="eyebrow eyebrow-dark">Ihre Anfrage</p>
-        <h2>Diese Angaben helfen.</h2>
+      <div class="prose">
+        <h2>Was bei der Anfrage hilft</h2>
         <ul class="check-list">
           <li><Icon name="check" />Ihr Standort, am einfachsten per WhatsApp</li>
           <li><Icon name="check" />Worum es geht: Tür, Fahrzeug, Schloss oder Beratung</li>
@@ -81,15 +79,15 @@ const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
           </p>
         </div>
       </div>
-      <aside class="aside-card reveal">
+      <aside class="aside-card">
         <h2>Einsatzgebiet</h2>
         <p>
           Firmensitz ist {business.city}. Je nach Auftrag ist {business.shortName} ungefähr {business.radiusKm} Kilometer rund um {business.city} unterwegs.
         </p>
-        <a class="text-link" href={url('einsatzgebiet/')}>Mehr zum Einsatzgebiet <span aria-hidden="true">→</span></a>
+        <a class="text-link" href={url('einsatzgebiet/')}>Mehr zum Einsatzgebiet</a>
       </aside>
     </div>
   </section>
 
-  <FaqSection entries={entries} title="Fragen zur Anfrage." intro="Was Sie vor der Kontaktaufnahme wissen sollten." />
+  <FaqSection entries={entries} title="Fragen zur Anfrage" intro="Was Sie vor der Kontaktaufnahme wissen sollten." />
 </BaseLayout>

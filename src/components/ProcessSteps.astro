@@ -5,7 +5,6 @@ interface Step {
 }
 
 interface Props {
-  eyebrow?: string;
   title?: string;
   steps?: Step[];
   id?: string;
@@ -20,19 +19,18 @@ const defaultSteps: Step[] = [
   { title: 'Hilfe vor Ort', text: 'Der mobile Service kommt zu Ihrem Standort.' },
 ];
 
-const { eyebrow = 'So läuft es ab', title = 'Vier Schritte. Klare Absprachen.', steps = defaultSteps, id = 'ablauf', tone = 'white' } = Astro.props;
+const { title = 'So läuft ein Einsatz ab', steps = defaultSteps, id = 'ablauf', tone = 'white' } = Astro.props;
 ---
 
 <section class={`section section-compact section-${tone} process-section`} id={id}>
   <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow eyebrow-dark">{eyebrow}</p>
+    <div class="section-heading">
       <h2>{title}</h2>
     </div>
     <ol class="process-grid">
       {steps.map((step, index) => (
-        <li class="process-card reveal">
-          <span class="step-number">{String(index + 1).padStart(2, '0')}</span>
+        <li class="process-card">
+          <span class="step-number">{index + 1}</span>
           <h3>{step.title}</h3>
           <p>{step.text}</p>
         </li>

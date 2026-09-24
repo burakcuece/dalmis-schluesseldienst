@@ -1,29 +1,22 @@
 ---
 import AreaSection from '../components/AreaSection.astro';
-import ContactButtons from '../components/ContactButtons.astro';
 import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
 import OwnerSection from '../components/OwnerSection.astro';
-import PriceClarity from '../components/PriceClarity.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getFaqs } from '../data/faq';
-import { getService } from '../data/services';
-import { business } from '../data/site';
+import { services } from '../data/services';
+import { business, whatsappUrl } from '../data/site';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import { asset, url } from '../lib/url';
 
 const homeFaqs = getFaqs(['orte', 'kosten-tuer', 'auto', 'angaben']);
 
-// IDs der Karten bleiben erhalten, damit alte Sprungmarken weiter funktionieren
-const cards = [
-  { service: getService('tueroeffnung'), variant: 'featured', id: 'tueroeffnung' },
-  { service: getService('autooeffnung'), variant: 'default', id: 'auto' },
-  { service: getService('schloss-zylinder'), variant: 'compact', id: undefined },
-  { service: getService('sicherheitstechnik'), variant: 'compact', id: 'sicherheitstechnik' },
-] as const;
+// Sprungmarken der früheren einseitigen Website bleiben erhalten
+const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooeffnung: 'auto', sicherheitstechnik: 'sicherheitstechnik' };
 ---
 
 <BaseLayout
@@ -40,16 +33,24 @@ const cards = [
     faqSchema(homeFaqs, ''),
   ]}
 >
-  <section class="hero" id="top">
+  <section class="hero hero-home" id="top">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Mobiler Schlüsseldienst aus {business.city}</p>
-        <h1><span>Ausgesperrt?</span><strong>Wir kommen direkt zu Ihnen.</strong></h1>
+        <p class="hero-kicker">Mobiler Schlüsseldienst · {business.city} und Umgebung</p>
+        <h1>Ausgesperrt? Rufen Sie direkt an.</h1>
+        <a class="hero-number" href={business.phone.href}>
+          <span class="hero-number-label"><Icon name="phone" />{business.owner} persönlich</span>
+          <strong>{business.phone.display}</strong>
+        </a>
         <p class="hero-lead">
-          Ob Haustür, Fahrzeug oder Schloss: Bei {business.shortName} sprechen Sie direkt mit {business.owner}. Nennen Sie Ihren Standort und schildern Sie kurz, was passiert ist.
+          Haustür zugefallen, Schlüssel im Auto oder Schloss defekt: Sagen Sie kurz, wo Sie sind und was passiert ist. Den Preis erfahren Sie, bevor gearbeitet wird.
         </p>
-        <ContactButtons class="hero-actions" />
-        <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
+        <div class="hero-secondary">
+          <a class="button button-light" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+            <Icon name="whatsapp" />
+            Standort per WhatsApp senden
+          </a>
+        </div>
       </div>
       <div class="hero-visual">
         <img src={asset('door-lock.webp')} width="1400" height="933" alt="Türgriff und Schließzylinder an einer Haustür" fetchpriority="high" decoding="async" />
@@ -59,20 +60,26 @@ const cards = [
 
   <section class="section section-light services-section" id="leistungen">
     <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow eyebrow-dark">Leistungen</p>
-        <h2>Wobei kann {business.shortName} helfen?</h2>
+      <div class="section-heading">
+        <h2>Leistungen</h2>
         <p>Vier Bereiche, ein Ansprechpartner. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
       </div>
       <div class="services-grid">
-        {cards.map((card) => <ServiceCard service={card.service} variant={card.variant} id={card.id} />)}
+        {services.map((service) => <ServiceCard service={service} variant="compact" id={legacyIds[service.slug]} />)}
       </div>
-      <p class="more-link"><a class="text-link" href={url('leistungen/')}>Alle Leistungen im Überblick <span aria-hidden="true">→</span></a></p>
+      <p class="more-link"><a class="text-link" href={url('leistungen/')}>Alle Leistungen im Überblick</a></p>
     </div>
   </section>
 
-  <PriceClarity />
-  <ProcessSteps />
+  <ProcessSteps
+    title="So läuft ein Einsatz ab"
+    steps={[
+      { title: 'Anrufen oder schreiben', text: 'Per Telefon oder WhatsApp. Sagen Sie, wo Sie sind und was passiert ist.' },
+      { title: 'Preis erfahren', text: 'Sie hören den voraussichtlichen Preis und das Vorgehen, bevor jemand losfährt.' },
+      { title: 'Entscheiden', text: 'Erst mit Ihrer Zusage wird der Einsatz fest vereinbart.' },
+      { title: 'Hilfe vor Ort', text: `${business.owner} kommt zu Ihnen und erledigt die Arbeit.` },
+    ]}
+  />
   <OwnerSection />
   <AreaSection />
   <FaqSection entries={homeFaqs} />

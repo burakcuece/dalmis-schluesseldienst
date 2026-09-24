@@ -13,14 +13,14 @@ const service = getService('autooeffnung');
   slug="autooeffnung"
   metaTitle={`Autoöffnung in ${business.city} – Schlüssel im Auto?`}
   description={`Fahrzeug verschlossen, Schlüssel im Auto? ${business.shortName} hilft bei der Autoöffnung in ${business.city} und Umgebung. Modell und Standort nennen, Möglichkeiten vorab klären.`}
-  heroTitle="Autoöffnung: Schlüssel im Auto eingeschlossen?"
+  heroTitle="Autoöffnung: Schlüssel im Auto?"
   lead="Nennen Sie Marke, Modell und Standort Ihres Fahrzeugs. Ob und wie eine Öffnung möglich ist, klären wir mit Ihnen, bevor jemand losfährt."
   faqIds={['auto', 'auto-angaben', 'auto-notfall', 'whatsapp', 'preis-wann']}
-  faqTitle="Fragen zur Autoöffnung."
+  faqTitle="Fragen zur Autoöffnung"
 >
   <section class="section section-white">
     <div class="container split">
-      <div class="prose reveal">
+      <div class="prose">
         <div class="callout callout-alert" role="note">
           <Icon name="alert" />
           <p>
@@ -29,27 +29,24 @@ const service = getService('autooeffnung');
           </p>
         </div>
 
-        <p class="eyebrow eyebrow-dark">Vorab klären</p>
-        <h2>Jedes Fahrzeug ist anders.</h2>
+        <h2>Erst klären, dann losfahren</h2>
         <p>
           Ob sich ein Fahrzeug öffnen lässt und wie dabei vorgegangen wird, hängt unter anderem von Hersteller, Modell und Baujahr ab.
           Deshalb fragt {business.owner} zuerst nach diesen Angaben und bespricht mit Ihnen, was in Ihrem Fall möglich ist.
         </p>
         <ul class="info-grid">
           <li class="info-card">
-            <span class="info-card-icon"><Icon name="car" /></span>
             <h3>Marke &amp; Modell</h3>
             <p>Mit Marke, Modell und ungefährem Baujahr lässt sich die Situation am besten einschätzen.</p>
           </li>
           <li class="info-card">
-            <span class="info-card-icon"><Icon name="pin" /></span>
             <h3>Genauer Standort</h3>
             <p>Straße, Parkplatz oder Parkhaus: Senden Sie Ihren Standort am einfachsten direkt per WhatsApp.</p>
           </li>
         </ul>
       </div>
 
-      <aside class="aside-card reveal" aria-labelledby="auto-angaben">
+      <aside class="aside-card" aria-labelledby="auto-angaben">
         <h2 id="auto-angaben">Das hilft bei Ihrer Anfrage</h2>
         <ul class="check-list">
           <li><Icon name="check" />Marke, Modell und ungefähres Baujahr</li>
@@ -64,7 +61,7 @@ const service = getService('autooeffnung');
 
   <ProcessSteps
     tone="light"
-    title="So läuft eine Autoöffnung ab."
+    title="So läuft eine Autoöffnung ab"
     steps={[
       { title: 'Fahrzeug beschreiben', text: 'Marke, Modell, Baujahr und Standort nennen.' },
       { title: 'Möglichkeiten klären', text: 'Wir besprechen, ob und wie eine Öffnung möglich ist.' },

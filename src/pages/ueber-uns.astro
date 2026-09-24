@@ -1,6 +1,5 @@
 ---
 import FinalCta from '../components/FinalCta.astro';
-import Icon from '../components/Icon.astro';
 import OwnerSection from '../components/OwnerSection.astro';
 import PageHero from '../components/PageHero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
@@ -22,45 +21,17 @@ const crumbs: Crumb[] = [
   crumbs={crumbs}
 >
   <PageHero
-    eyebrow="Über uns"
-    title={`Inhabergeführt aus ${business.city}.`}
+    title={`Ein Betrieb aus ${business.city}, ein Ansprechpartner`}
     lead={`${business.shortName} steht für Schlüsseldienst und Sicherheitstechnik mit persönlichem Ansprechpartner. ${business.slogan}`}
     crumbs={crumbs}
   />
 
   <OwnerSection showMoreLink={false} />
 
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow eyebrow-dark">Wofür DALMIS steht</p>
-        <h2>Persönlich. Transparent. Aus dem Revier.</h2>
-      </div>
-      <ul class="info-grid info-grid-3">
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="user" /></span>
-          <h3>Persönlich</h3>
-          <p>Sie sprechen direkt mit {business.owner}. Keine Hotline, kein Vermittlungsportal dazwischen.</p>
-        </li>
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="check" /></span>
-          <h3>Transparent</h3>
-          <p>Preis und Vorgehen werden vor Beginn der Arbeiten mit Ihnen abgestimmt. Erst dann entscheiden Sie.</p>
-        </li>
-        <li class="info-card reveal">
-          <span class="info-card-icon"><Icon name="pin" /></span>
-          <h3>Regional</h3>
-          <p>Firmensitz in {business.city}, unterwegs in der Umgebung und je nach Auftrag im angrenzenden Ruhrgebiet.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <section class="section section-white">
     <div class="container">
-      <div class="section-heading reveal">
-        <p class="eyebrow eyebrow-dark">Leistungen</p>
-        <h2>Wobei {business.shortName} hilft.</h2>
+      <div class="section-heading">
+        <h2>Leistungen</h2>
       </div>
       <div class="services-grid">
         {services.map((service) => <ServiceCard service={service} variant="compact" />)}

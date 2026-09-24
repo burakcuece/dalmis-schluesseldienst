@@ -26,8 +26,7 @@ const groups = (Object.keys(faqCategories) as FaqCategory[])
   schema={[faqSchema(faqs, 'faq/')]}
 >
   <PageHero
-    eyebrow="FAQ"
-    title="Häufige Fragen."
+    title="Häufige Fragen"
     lead="Hier finden Sie Antworten auf die Fragen, die uns am häufigsten gestellt werden. Ihre Frage ist nicht dabei? Rufen Sie einfach an."
     crumbs={crumbs}
     showActions={false}
@@ -49,11 +48,11 @@ const groups = (Object.keys(faqCategories) as FaqCategory[])
         <div class="aside-actions">
           <a class="button button-primary button-large" href={business.phone.href}>
             <Icon name="phone" />
-            <span><small>Anrufen</small>{business.phone.display}</span>
+            {business.phone.display} anrufen
           </a>
           <a class="button button-light button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
             <Icon name="whatsapp" />
-            <span><small>Nachricht senden</small>WhatsApp</span>
+            WhatsApp schreiben
           </a>
         </div>
       </aside>
