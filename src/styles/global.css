@@ -744,6 +744,121 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------
+   Vertrauensleiste und „Was ist passiert?“ (Startseite)
+   -------------------------------------------------------------------------- */
+
+.trust-strip {
+  color: var(--white);
+  background: var(--black);
+}
+
+.trust-strip ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.trust-strip li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.trust-strip svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: var(--yellow);
+}
+
+.quick-head {
+  max-width: 640px;
+  margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.quick-head p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quick-option {
+  display: flex;
+  height: 100%;
+  min-height: 158px;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.quick-option:hover,
+.quick-option:focus-visible {
+  background: #fffbea;
+  border-color: var(--yellow);
+}
+
+.quick-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--black);
+}
+
+.quick-option strong {
+  font-family: var(--font-head);
+  font-size: clamp(1.2rem, 3.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.quick-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+  color: #12804e;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.quick-action svg {
+  width: 16px;
+  height: 16px;
+}
+
+.quick-alt {
+  margin: 1.4rem 0 0;
+  color: var(--text-soft);
+}
+
+.quick-alt a {
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+/* --------------------------------------------------------------------------
    Leistungskarten
    -------------------------------------------------------------------------- */
 
@@ -893,6 +1008,22 @@ h3 {
 
 .service-card-compact a {
   padding-top: 0.4rem;
+}
+
+/* Startseite: auf kleinen Bildschirmen kompakt, ab 1024px Bild oben */
+.services-grid-4 .service-card {
+  display: grid;
+  grid-template-columns: minmax(104px, 35%) minmax(0, 1fr);
+}
+
+.services-grid-4 .service-card-media img {
+  height: 100%;
+  min-height: 170px;
+}
+
+.services-grid-4 .service-card-content {
+  min-height: 0;
+  padding: clamp(0.9rem, 2vw, 1.4rem);
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -1999,6 +2130,30 @@ h3 {
   .services-grid-3,
   .info-grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .services-grid-4,
+  .quick-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .services-grid-4 .service-card {
+    display: flex;
+  }
+
+  .services-grid-4 .service-card-media img {
+    height: 210px;
+    min-height: 0;
+  }
+
+  .trust-strip ul {
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+  }
+
+  .trust-strip li {
+    align-items: center;
+    font-size: 0.95rem;
   }
 
   .footer-grid {

@@ -4,12 +4,14 @@ import { url } from '../lib/url';
 
 interface Props {
   showMoreLink?: boolean;
+  /** Hintergrund des Bereichs */
+  tone?: 'white' | 'light';
 }
 
-const { showMoreLink = true } = Astro.props;
+const { showMoreLink = true, tone = 'light' } = Astro.props;
 ---
 
-<section class="section section-light owner-section" id="ueber-uns">
+<section class={`section section-${tone} owner-section`} id="ueber-uns">
   <div class="container owner-grid">
     <h2>Sie sprechen mit {business.owner}</h2>
     <div class="owner-copy">

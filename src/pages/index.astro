@@ -6,7 +6,9 @@ import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
 import OwnerSection from '../components/OwnerSection.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
+import QuickHelp from '../components/QuickHelp.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import TrustStrip from '../components/TrustStrip.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getFaqs } from '../data/faq';
 import { services } from '../data/services';
@@ -51,20 +53,24 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
     </div>
   </section>
 
-  <section class="section section-light services-section" id="leistungen">
+  <TrustStrip />
+  <QuickHelp />
+
+  <section class="section section-white services-section" id="leistungen">
     <div class="container">
       <div class="section-heading">
         <h2>Leistungen</h2>
         <p>Vier Bereiche, ein Ansprechpartner. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
       </div>
-      <div class="services-grid">
-        {services.map((service) => <ServiceCard service={service} variant="compact" id={legacyIds[service.slug]} />)}
+      <div class="services-grid services-grid-4">
+        {services.map((service) => <ServiceCard service={service} id={legacyIds[service.slug]} />)}
       </div>
       <p class="more-link"><a class="text-link" href={url('leistungen/')}>Alle Leistungen im Überblick</a></p>
     </div>
   </section>
 
   <ProcessSteps
+    tone="light"
     title="So läuft ein Einsatz ab"
     steps={[
       { title: 'Anrufen oder schreiben', text: 'Per Telefon oder WhatsApp. Sagen Sie, wo Sie sind und was passiert ist.' },
@@ -73,7 +79,7 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
       { title: 'Hilfe vor Ort', text: `${business.owner} kommt zu Ihnen und erledigt die Arbeit.` },
     ]}
   />
-  <OwnerSection />
+  <OwnerSection tone="white" />
   <AreaSection />
   <FaqSection entries={homeFaqs} />
   <FinalCta />

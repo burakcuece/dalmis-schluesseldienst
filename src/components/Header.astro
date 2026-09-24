@@ -33,7 +33,7 @@ const ariaCurrent = (path: string) => (isCurrent(current, path) ? 'page' : undef
     <div class="header-actions">
       <a class="button button-primary header-call" href={business.phone.href}>
         <Icon name="phone" />
-        Jetzt anrufen
+        {business.phone.display}
       </a>
       <a class="header-phone-icon" href={business.phone.href} aria-label={`${business.shortName} unter ${business.phone.display} anrufen`}>
         <Icon name="phone" />

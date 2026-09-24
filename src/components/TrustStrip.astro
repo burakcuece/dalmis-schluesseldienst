@@ -1,0 +1,18 @@
+---
+/** Belegbare Fakten direkt unter dem Hero. Keine unbestätigten Versprechen aufnehmen. */
+import Icon from './Icon.astro';
+import { business } from '../data/site';
+
+const facts = [
+  'Inhabergeführt, kein Callcenter',
+  'Preis vor Arbeitsbeginn',
+  `Firmensitz in ${business.city}`,
+  `Rund ${business.radiusKm} km Einsatzgebiet`,
+];
+---
+
+<div class="trust-strip">
+  <ul class="container">
+    {facts.map((fact) => <li><Icon name="check" />{fact}</li>)}
+  </ul>
+</div>
