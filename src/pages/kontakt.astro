@@ -1,0 +1,95 @@
+---
+import FaqSection from '../components/FaqSection.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFaqs } from '../data/faq';
+import { business, mailtoUrl, whatsappUrl } from '../data/site';
+import { faqSchema, type Crumb } from '../lib/schema';
+import { url } from '../lib/url';
+
+const crumbs: Crumb[] = [
+  { label: 'Start', path: '' },
+  { label: 'Kontakt', path: 'kontakt/' },
+];
+
+const entries = getFaqs(['angaben', 'whatsapp', 'ansprechpartner']);
+---
+
+<BaseLayout
+  title={`Kontakt: Schlüsseldienst ${business.city} anrufen oder schreiben`}
+  description={`So erreichen Sie ${business.shortName} in ${business.city}: Telefon ${business.phone.display}, WhatsApp oder E-Mail. Sie sprechen direkt mit ${business.owner}.`}
+  path="kontakt/"
+  crumbs={crumbs}
+  schema={[faqSchema(entries, 'kontakt/')]}
+>
+  <PageHero
+    eyebrow="Kontakt"
+    title={`Direkt mit ${business.owner} sprechen.`}
+    lead="Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie eine E-Mail. Schildern Sie kurz Ihr Anliegen und nennen Sie Ihren Standort."
+    crumbs={crumbs}
+    showActions={false}
+  />
+
+  <section class="section section-light section-compact">
+    <div class="container contact-grid">
+      <div class="contact-card contact-card-primary reveal">
+        <h2>Telefon</h2>
+        <p>Bei dringenden Anliegen am besten direkt anrufen.</p>
+        <p class="contact-value">{business.phone.display}</p>
+        <a class="button button-primary button-large" href={business.phone.href}>
+          <Icon name="phone" />
+          Jetzt anrufen
+        </a>
+      </div>
+      <div class="contact-card reveal">
+        <h2>WhatsApp</h2>
+        <p>Standort teilen und bei Bedarf Fotos schicken. Eine Nachricht ist bereits vorbereitet.</p>
+        <p class="contact-value">{business.phone.display}</p>
+        <a class="button button-light button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+          <Icon name="whatsapp" />
+          WhatsApp schreiben
+        </a>
+      </div>
+      <div class="contact-card reveal">
+        <h2>E-Mail</h2>
+        <p>Für Anfragen, die nicht eilen, zum Beispiel eine Beratung zur Sicherheitstechnik.</p>
+        <p class="contact-value">{business.email}</p>
+        <a class="button button-light button-large" href={mailtoUrl}>
+          <Icon name="mail" />
+          E-Mail schreiben
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container split">
+      <div class="prose reveal">
+        <p class="eyebrow eyebrow-dark">Ihre Anfrage</p>
+        <h2>Diese Angaben helfen.</h2>
+        <ul class="check-list">
+          <li><Icon name="check" />Ihr Standort, am einfachsten per WhatsApp</li>
+          <li><Icon name="check" />Worum es geht: Tür, Fahrzeug, Schloss oder Beratung</li>
+          <li><Icon name="check" />Bei Türen: zugefallen oder abgeschlossen</li>
+          <li><Icon name="check" />Bei Fahrzeugen: Marke, Modell und ungefähres Baujahr</li>
+        </ul>
+        <div class="callout callout-alert" role="note">
+          <Icon name="alert" />
+          <p>
+            <strong>Notfall mit Gefahr für Menschen oder Tiere?</strong> Rufen Sie sofort den Notruf <a href="tel:112">112</a>.
+          </p>
+        </div>
+      </div>
+      <aside class="aside-card reveal">
+        <h2>Einsatzgebiet</h2>
+        <p>
+          Firmensitz ist {business.city}. Je nach Auftrag ist {business.shortName} ungefähr {business.radiusKm} Kilometer rund um {business.city} unterwegs.
+        </p>
+        <a class="text-link" href={url('einsatzgebiet/')}>Mehr zum Einsatzgebiet <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </section>
+
+  <FaqSection entries={entries} title="Fragen zur Anfrage." intro="Was Sie vor der Kontaktaufnahme wissen sollten." />
+</BaseLayout>

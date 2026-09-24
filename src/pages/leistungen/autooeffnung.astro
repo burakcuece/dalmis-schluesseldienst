@@ -1,0 +1,75 @@
+---
+import ContactButtons from '../../components/ContactButtons.astro';
+import Icon from '../../components/Icon.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { business } from '../../data/site';
+import { getService } from '../../data/services';
+
+const service = getService('autooeffnung');
+---
+
+<ServiceLayout
+  slug="autooeffnung"
+  metaTitle={`Autoöffnung in ${business.city} – Schlüssel im Auto?`}
+  description={`Fahrzeug verschlossen, Schlüssel im Auto? ${business.shortName} hilft bei der Autoöffnung in ${business.city} und Umgebung. Modell und Standort nennen, Möglichkeiten vorab klären.`}
+  heroTitle="Autoöffnung: Schlüssel im Auto eingeschlossen?"
+  lead="Nennen Sie Marke, Modell und Standort Ihres Fahrzeugs. Ob und wie eine Öffnung möglich ist, klären wir mit Ihnen, bevor jemand losfährt."
+  faqIds={['auto', 'auto-angaben', 'auto-notfall', 'whatsapp', 'preis-wann']}
+  faqTitle="Fragen zur Autoöffnung."
+>
+  <section class="section section-white">
+    <div class="container split">
+      <div class="prose reveal">
+        <div class="callout callout-alert" role="note">
+          <Icon name="alert" />
+          <p>
+            <strong>Kind oder Tier im Fahrzeug?</strong> Wenn ein Mensch oder Tier im Auto in Gefahr ist, etwa bei Hitze, rufen Sie
+            bitte sofort den Notruf <a href="tel:112">112</a>.
+          </p>
+        </div>
+
+        <p class="eyebrow eyebrow-dark">Vorab klären</p>
+        <h2>Jedes Fahrzeug ist anders.</h2>
+        <p>
+          Ob sich ein Fahrzeug öffnen lässt und wie dabei vorgegangen wird, hängt unter anderem von Hersteller, Modell und Baujahr ab.
+          Deshalb fragt {business.owner} zuerst nach diesen Angaben und bespricht mit Ihnen, was in Ihrem Fall möglich ist.
+        </p>
+        <ul class="info-grid">
+          <li class="info-card">
+            <span class="info-card-icon"><Icon name="car" /></span>
+            <h3>Marke &amp; Modell</h3>
+            <p>Mit Marke, Modell und ungefährem Baujahr lässt sich die Situation am besten einschätzen.</p>
+          </li>
+          <li class="info-card">
+            <span class="info-card-icon"><Icon name="pin" /></span>
+            <h3>Genauer Standort</h3>
+            <p>Straße, Parkplatz oder Parkhaus: Senden Sie Ihren Standort am einfachsten direkt per WhatsApp.</p>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="aside-card reveal" aria-labelledby="auto-angaben">
+        <h2 id="auto-angaben">Das hilft bei Ihrer Anfrage</h2>
+        <ul class="check-list">
+          <li><Icon name="check" />Marke, Modell und ungefähres Baujahr</li>
+          <li><Icon name="check" />Ihr genauer Standort</li>
+          <li><Icon name="check" />Wo sich der Schlüssel befindet</li>
+          <li><Icon name="check" />Eine kurze Beschreibung der Situation</li>
+        </ul>
+        <ContactButtons class="aside-actions" whatsappText={service.whatsappText} />
+      </aside>
+    </div>
+  </section>
+
+  <ProcessSteps
+    tone="light"
+    title="So läuft eine Autoöffnung ab."
+    steps={[
+      { title: 'Fahrzeug beschreiben', text: 'Marke, Modell, Baujahr und Standort nennen.' },
+      { title: 'Möglichkeiten klären', text: 'Wir besprechen, ob und wie eine Öffnung möglich ist.' },
+      { title: 'Preis abstimmen', text: 'Den voraussichtlichen Preis erfahren Sie vor Beginn.' },
+      { title: 'Hilfe vor Ort', text: 'Der mobile Service kommt zu Ihrem Fahrzeug.' },
+    ]}
+  />
+</ServiceLayout>

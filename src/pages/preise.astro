@@ -1,0 +1,106 @@
+---
+import FaqSection from '../components/FaqSection.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFaqs } from '../data/faq';
+import { business } from '../data/site';
+import type { IconName } from '../lib/icons';
+import { faqSchema, type Crumb } from '../lib/schema';
+
+const crumbs: Crumb[] = [
+  { label: 'Start', path: '' },
+  { label: 'Preise', path: 'preise/' },
+];
+
+const entries = getFaqs(['kosten-tuer', 'preis-wann', 'serioes']);
+
+const factors: { icon: IconName; title: string; text: string }[] = [
+  { icon: 'door', title: 'Die Situation', text: 'Eine zugefallene Tür ist etwas anderes als eine abgeschlossene.' },
+  { icon: 'lock', title: 'Schloss & Tür', text: 'Art und Zustand von Schloss, Zylinder und Tür bestimmen das Vorgehen.' },
+  { icon: 'tools', title: 'Aufwand', text: 'Wie viel Zeit und welches Werkzeug der Einsatz voraussichtlich braucht.' },
+  { icon: 'clock', title: 'Uhrzeit', text: 'Je nach Tageszeit kann sich der Preis unterscheiden.' },
+  { icon: 'key', title: 'Material', text: 'Zum Beispiel, wenn ein neuer Schließzylinder eingesetzt wird.' },
+];
+---
+
+<BaseLayout
+  title={`Preise für Schlüsseldienst in ${business.city} – vorab abgestimmt`}
+  description={`Was kostet ein Schlüsseldienst in ${business.city}? Bei ${business.shortName} werden Preis und Vorgehen vor Beginn besprochen. Diese Faktoren beeinflussen die Kosten.`}
+  path="preise/"
+  crumbs={crumbs}
+  schema={[faqSchema(entries, 'preise/')]}
+>
+  <PageHero
+    eyebrow="Preise"
+    title="Erst besprechen. Dann beauftragen."
+    lead="Bei DALMIS erfahren Sie den voraussichtlichen Preis, bevor gearbeitet wird. Erst dann entscheiden Sie, ob Sie den Auftrag erteilen."
+    crumbs={crumbs}
+  />
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow eyebrow-dark">Preisfaktoren</p>
+        <h2>Warum es keinen Pauschalpreis gibt.</h2>
+        <p>
+          Jeder Einsatz ist anders. Ein Festpreis ohne Rückfrage zur Situation wäre deshalb nicht seriös. Diese Punkte fließen in die
+          Einschätzung ein:
+        </p>
+      </div>
+      <ul class="info-grid info-grid-3">
+        {factors.map((factor) => (
+          <li class="info-card reveal">
+            <span class="info-card-icon"><Icon name={factor.icon} /></span>
+            <h3>{factor.title}</h3>
+            <p>{factor.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ProcessSteps
+    tone="light"
+    eyebrow="Preisabsprache"
+    title="So erfahren Sie den Preis vorab."
+    steps={[
+      { title: 'Situation schildern', text: 'Am Telefon oder per WhatsApp: Standort und Anliegen.' },
+      { title: 'Einschätzung erhalten', text: 'Sie erfahren den voraussichtlichen Preis und das Vorgehen.' },
+      { title: 'Entscheiden', text: 'Sie entscheiden in Ruhe, ob Sie den Auftrag erteilen.' },
+      { title: 'Einsatz vor Ort', text: 'Erst nach Ihrer Zusage beginnt die Arbeit.' },
+    ]}
+  />
+
+  <section class="section section-white">
+    <div class="container split">
+      <div class="prose reveal">
+        <p class="eyebrow eyebrow-dark">Verbrauchertipp</p>
+        <h2>Seriöse Schlüsseldienste erkennen.</h2>
+        <p>
+          Wer ausgesperrt ist, steht unter Druck. Genau das nutzen unseriöse Anbieter aus. Mit diesen Punkten schützen Sie sich, egal
+          welchen Schlüsseldienst Sie beauftragen:
+        </p>
+        <ul class="check-list">
+          <li><Icon name="check" />Der Anbieter nennt einen Namen, einen Ansprechpartner und einen Firmensitz.</li>
+          <li><Icon name="check" />Der Preis wird vor Beginn der Arbeiten genannt, nicht erst danach.</li>
+          <li><Icon name="check" />Sie werden nicht gedrängt, unter Zeitdruck etwas zu unterschreiben.</li>
+          <li><Icon name="check" />Sie erhalten eine Rechnung mit den ausgeführten Leistungen.</li>
+        </ul>
+      </div>
+      <aside class="aside-card reveal">
+        <h2>Preis einschätzen lassen</h2>
+        <p>Schildern Sie kurz Ihre Situation. {business.owner} nennt Ihnen den voraussichtlichen Preis, bevor es losgeht.</p>
+        <a class="button button-primary button-large" href={business.phone.href}>
+          <Icon name="phone" />
+          <span><small>Direkt anrufen</small>{business.phone.display}</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <FaqSection entries={entries} title="Fragen zu den Preisen." intro="Was Sie zu Kosten und Preisabsprache wissen sollten." />
+  <FinalCta />
+</BaseLayout>

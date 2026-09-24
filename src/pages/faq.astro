@@ -1,0 +1,64 @@
+---
+import FaqAccordion from '../components/FaqAccordion.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqCategories, faqs, type FaqCategory } from '../data/faq';
+import { business, whatsappUrl } from '../data/site';
+import { faqSchema, type Crumb } from '../lib/schema';
+
+const crumbs: Crumb[] = [
+  { label: 'Start', path: '' },
+  { label: 'FAQ', path: 'faq/' },
+];
+
+const groups = (Object.keys(faqCategories) as FaqCategory[])
+  .map((category) => ({ category, label: faqCategories[category], entries: faqs.filter((faq) => faq.category === category) }))
+  .filter((group) => group.entries.length > 0);
+---
+
+<BaseLayout
+  title="Häufige Fragen zu Türöffnung, Autoöffnung & Preisen"
+  description={`Antworten auf häufige Fragen an ${business.shortName}: Kosten, Ablauf einer Türöffnung, Autoöffnung, Schlosswechsel, Einsatzgebiet und Kontakt.`}
+  path="faq/"
+  crumbs={crumbs}
+  schema={[faqSchema(faqs, 'faq/')]}
+>
+  <PageHero
+    eyebrow="FAQ"
+    title="Häufige Fragen."
+    lead="Hier finden Sie Antworten auf die Fragen, die uns am häufigsten gestellt werden. Ihre Frage ist nicht dabei? Rufen Sie einfach an."
+    crumbs={crumbs}
+    showActions={false}
+  />
+
+  <section class="section section-light">
+    <div class="container split">
+      <div>
+        {groups.map((group) => (
+          <div class="faq-group" id={group.category}>
+            <h2>{group.label}</h2>
+            <FaqAccordion entries={group.entries} idPrefix={`faq-${group.category}`} />
+          </div>
+        ))}
+      </div>
+      <aside class="aside-card aside-sticky">
+        <h2>Frage nicht dabei?</h2>
+        <p>{business.owner} beantwortet Ihre Frage gern persönlich.</p>
+        <div class="aside-actions">
+          <a class="button button-primary button-large" href={business.phone.href}>
+            <Icon name="phone" />
+            <span><small>Anrufen</small>{business.phone.display}</span>
+          </a>
+          <a class="button button-light button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+            <Icon name="whatsapp" />
+            <span><small>Nachricht senden</small>WhatsApp</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>

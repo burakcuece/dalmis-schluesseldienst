@@ -1,3 +1,12 @@
+# Build
+dist/
+.astro/
+
+# Abhängigkeiten
+node_modules/
+
+# Sonstiges
 upload/
 *.log
 .DS_Store
+.vercel/

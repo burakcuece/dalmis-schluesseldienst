@@ -1,0 +1,23 @@
+---
+/** Schlichter Rahmen für Rechtstexte und Hinweisseiten. */
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  noindex?: boolean;
+}
+
+const { title, description, path, noindex = true } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} path={path} noindex={noindex}>
+  <div class="legal-main">
+    <div class="container">
+      <article class="legal-shell">
+        <slot />
+      </article>
+    </div>
+  </div>
+</BaseLayout>

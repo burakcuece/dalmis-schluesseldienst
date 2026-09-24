@@ -1,0 +1,9 @@
+---
+import { icons } from '../lib/icons';
+---
+
+<svg class="svg-sprite" aria-hidden="true" focusable="false">
+  {Object.entries(icons).map(([name, path]) => (
+    <symbol id={`icon-${name}`} viewBox="0 0 24 24"><path d={path} /></symbol>
+  ))}
+</svg>

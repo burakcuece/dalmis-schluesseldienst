@@ -1,0 +1,30 @@
+---
+import type { FaqEntry } from '../data/faq';
+
+interface Props {
+  entries: FaqEntry[];
+  /** Eindeutiges Präfix für die IDs der Antwortfelder auf dieser Seite */
+  idPrefix?: string;
+}
+
+const { entries, idPrefix = 'faq' } = Astro.props;
+---
+
+<div class="accordion" data-accordion>
+  {entries.map((entry) => {
+    const panelId = `${idPrefix}-${entry.id}`;
+    return (
+      <article class="accordion-item reveal">
+        <h3>
+          <button type="button" aria-expanded="false" aria-controls={panelId}>
+            <span>{entry.question}</span>
+            <span class="accordion-icon" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="accordion-panel" id={panelId} hidden>
+          {entry.answer.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </article>
+    );
+  })}
+</div>

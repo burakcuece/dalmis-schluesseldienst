@@ -1,0 +1,42 @@
+---
+interface Step {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  steps?: Step[];
+  id?: string;
+  /** Hintergrund des Bereichs */
+  tone?: 'white' | 'light';
+}
+
+const defaultSteps: Step[] = [
+  { title: 'Kontakt aufnehmen', text: 'Anrufen oder per WhatsApp schreiben.' },
+  { title: 'Situation schildern', text: 'Standort und Anliegen kurz nennen.' },
+  { title: 'Einsatz abstimmen', text: 'Verfügbarkeit und nächste Schritte gemeinsam klären.' },
+  { title: 'Hilfe vor Ort', text: 'Der mobile Service kommt zu Ihrem Standort.' },
+];
+
+const { eyebrow = 'So läuft es ab', title = 'Vier Schritte. Klare Absprachen.', steps = defaultSteps, id = 'ablauf', tone = 'white' } = Astro.props;
+---
+
+<section class={`section section-compact section-${tone} process-section`} id={id}>
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="eyebrow eyebrow-dark">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+    <ol class="process-grid">
+      {steps.map((step, index) => (
+        <li class="process-card reveal">
+          <span class="step-number">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { business, mailtoUrl } from '../data/site';
+import { url } from '../lib/url';
+---
+
+<LegalLayout title="Impressum" description={`Impressum von ${business.name} aus ${business.city}.`} path="impressum/">
+  <p class="eyebrow eyebrow-dark">Rechtliche Angaben</p>
+  <h1>Impressum</h1>
+
+  <div class="legal-notice">
+    <strong>Hinweis vor der finalen geschäftlichen Nutzung:</strong> Die vollständige ladungsfähige Anschrift wurde noch nicht bereitgestellt
+    und muss von {business.shortName} ergänzt sowie rechtlich geprüft werden.
+  </div>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    <strong>{business.name}</strong><br />
+    Inhaber: {business.owner}<br />
+    Straße und Hausnummer: <strong>noch zu ergänzen</strong><br />
+    Postleitzahl: <strong>noch zu ergänzen</strong><br />
+    Ort: {business.city}<br />
+    Deutschland
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    Telefon: <a href={business.phone.href}>{business.phone.display}</a><br />
+    E-Mail: <a href={mailtoUrl}>{business.email}</a>
+  </p>
+
+  <h2>Weitere Pflichtangaben</h2>
+  <p>
+    Registereintrag, Umsatzsteueridentifikationsnummer, Wirtschaftsidentifikationsnummer oder Angaben zu einer Aufsichtsbehörde sind nur
+    aufzunehmen, sofern sie auf das Unternehmen zutreffen. Entsprechende Angaben wurden bislang nicht bestätigt und daher nicht erfunden.
+  </p>
+
+  <p><a href={url()}>Zurück zur Startseite</a> · <a href={url('datenschutz/')}>Datenschutz</a></p>
+</LegalLayout>

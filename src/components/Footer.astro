@@ -1,0 +1,58 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { business, mailtoUrl, whatsappUrl } from '../data/site';
+import { legalNavigation, mainNavigation } from '../data/navigation';
+import { url } from '../lib/url';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <Brand class="brand-footer" />
+      <p>{business.slogan}</p>
+      <small>Mobiler Schlüsseldienst &amp; Sicherheitstechnik aus {business.city}.</small>
+      <small class="image-disclosure">Bildmotive sind beispielhafte Darstellungen, keine Aufnahmen tatsächlicher DALMIS-Einsätze.</small>
+    </div>
+    <div class="footer-column">
+      <h2>Kontakt</h2>
+      <address>
+        <span>{business.owner}</span>
+        <a href={business.phone.href}>{business.phone.display}</a>
+        <a href={mailtoUrl}>{business.email}</a>
+        <span>{business.city}</span>
+      </address>
+    </div>
+    <div class="footer-column">
+      <h2>Einsatzgebiet</h2>
+      <p>{business.city} und je nach Auftrag ungefähr {business.radiusKm} Kilometer Umgebung.</p>
+      <p>Weitere Teile des Ruhrgebiets und angrenzende Regionen auf Anfrage.</p>
+    </div>
+    <div class="footer-column">
+      <h2>Navigation</h2>
+      <nav aria-label="Footernavigation">
+        <a href={url()}>Startseite</a>
+        {mainNavigation.map((item) => <a href={url(item.path)}>{item.label}</a>)}
+      </nav>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span data-year>{year}</span> {business.shortName}</span>
+    <div>
+      {legalNavigation.map((item) => <a href={url(item.path)}>{item.label}</a>)}
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta" aria-label="Schnellkontakt">
+  <a href={business.phone.href}>
+    <Icon name="phone" />
+    <span>Anrufen</span>
+  </a>
+  <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+    <Icon name="whatsapp" />
+    <span>WhatsApp</span>
+  </a>
+</div>

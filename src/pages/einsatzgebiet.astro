@@ -1,0 +1,64 @@
+---
+import AreaSection from '../components/AreaSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Icon from '../components/Icon.astro';
+import PageHero from '../components/PageHero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFaqs } from '../data/faq';
+import { business, whatsappUrl } from '../data/site';
+import { faqSchema, type Crumb } from '../lib/schema';
+
+const crumbs: Crumb[] = [
+  { label: 'Start', path: '' },
+  { label: 'Einsatzgebiet', path: 'einsatzgebiet/' },
+];
+
+const entries = getFaqs(['orte', 'orte-nachbarstaedte', 'whatsapp', 'angaben']);
+---
+
+<BaseLayout
+  title={`Einsatzgebiet: Schlüsseldienst in ${business.city} und Umgebung`}
+  description={`${business.shortName} ist ein mobiler Schlüsseldienst aus ${business.city} und je nach Auftrag ungefähr ${business.radiusKm} Kilometer rund um ${business.city} unterwegs, z. B. in Recklinghausen, Marl, Gelsenkirchen und Dorsten.`}
+  path="einsatzgebiet/"
+  crumbs={crumbs}
+  schema={[faqSchema(entries, 'einsatzgebiet/')]}
+>
+  <PageHero
+    eyebrow="Einsatzgebiet"
+    title={`Mobiler Schlüsseldienst für ${business.city} und Umgebung.`}
+    lead={`Firmensitz ist ${business.city}. Je nach Auftrag ist ${business.shortName} ungefähr ${business.radiusKm} Kilometer rund um ${business.city} unterwegs. Ob ein Einsatz an Ihrem Standort möglich ist, klären wir direkt mit Ihnen.`}
+    crumbs={crumbs}
+  />
+
+  <AreaSection showMoreLink={false} />
+
+  <section class="section section-white">
+    <div class="container split">
+      <div class="prose reveal">
+        <p class="eyebrow eyebrow-dark">Standort mitteilen</p>
+        <h2>So finden wir schnell zu Ihnen.</h2>
+        <p>
+          Je genauer Ihre Angaben, desto besser lässt sich der Einsatz planen. Am einfachsten senden Sie Ihren Standort direkt über
+          WhatsApp.
+        </p>
+        <ul class="check-list">
+          <li><Icon name="check" />Adresse mit Hausnummer, bei Mehrfamilienhäusern auch die Etage</li>
+          <li><Icon name="check" />Bei Fahrzeugen: Straße, Parkplatz oder Parkhaus</li>
+          <li><Icon name="check" />Hinweise zum Zugang, z. B. Hinterhof oder Nebeneingang</li>
+        </ul>
+      </div>
+      <aside class="aside-card reveal">
+        <h2>Standort senden</h2>
+        <p>Über WhatsApp öffnet sich ein Chat mit einer vorbereiteten Nachricht. Den Standort teilen Sie dort mit der Standortfunktion.</p>
+        <a class="button button-primary button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
+          <Icon name="whatsapp" />
+          <span><small>Standort senden</small>WhatsApp schreiben</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <FaqSection entries={entries} title="Fragen zum Einsatzgebiet." intro="Wo DALMIS unterwegs ist und wie Sie Ihren Standort mitteilen." />
+  <FinalCta />
+</BaseLayout>

@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import IconSprite from '../components/IconSprite.astro';
+import { business } from '../data/site';
+import { breadcrumbSchema, businessSchema, type Crumb } from '../lib/schema';
+import { absoluteUrl, asset, url } from '../lib/url';
+
+interface Props {
+  /** Seitentitel ohne Markenzusatz, z. B. „Autoöffnung in Herten“ */
+  title: string;
+  description: string;
+  /** Pfad der Seite relativ zur Basis-URL, z. B. `preise/` */
+  path: string;
+  /** Brotkrumen für strukturierte Daten (die sichtbaren rendert PageHero) */
+  crumbs?: Crumb[];
+  /** Zusätzliche schema.org-Knoten dieser Seite */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+  /** Vollständiger Titel, falls der Standardaufbau nicht passt */
+  fullTitle?: string;
+}
+
+const { title, description, path, crumbs, schema = [], noindex = false, fullTitle } = Astro.props;
+
+const pageTitle = fullTitle ?? `${title} | ${business.shortName}`;
+const canonical = absoluteUrl(path);
+const ogImage = absoluteUrl('assets/og-dalmis.png');
+
+const graph = [businessSchema(), ...(crumbs && crumbs.length > 1 ? [breadcrumbSchema(crumbs)] : []), ...schema];
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="color-scheme" content="light" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml" />
+    <link rel="manifest" href={url('site.webmanifest')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={`${business.shortName} ${business.tagline}`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${business.name} aus ${business.city}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={jsonLd} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+    <IconSprite />
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/main.ts';
+    </script>
+  </body>
+</html>

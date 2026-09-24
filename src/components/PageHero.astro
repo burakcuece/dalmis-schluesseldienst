@@ -1,0 +1,43 @@
+---
+/** Seitenkopf für Unterseiten: Brotkrumen, Überschrift, Einleitung, Kontakt und optional ein Bild. */
+import Breadcrumbs from './Breadcrumbs.astro';
+import ContactButtons from './ContactButtons.astro';
+import Icon from './Icon.astro';
+import type { Crumb } from '../lib/schema';
+import { asset } from '../lib/url';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  crumbs: Crumb[];
+  image?: string;
+  imageAlt?: string;
+  whatsappText?: string;
+  showActions?: boolean;
+}
+
+const { eyebrow, title, lead, crumbs, image, imageAlt = '', whatsappText, showActions = true } = Astro.props;
+---
+
+<section class:list={['hero page-hero', { 'page-hero-simple': !image }]}>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <Breadcrumbs crumbs={crumbs} />
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p class="hero-lead">{lead}</p>
+      {showActions && (
+        <>
+          <ContactButtons class="hero-actions" whatsappText={whatsappText} />
+          <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
+        </>
+      )}
+    </div>
+    {image && (
+      <div class="hero-visual">
+        <img src={asset(image)} width="900" height="600" alt={imageAlt} fetchpriority="high" decoding="async" />
+      </div>
+    )}
+  </div>
+</section>

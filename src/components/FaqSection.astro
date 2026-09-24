@@ -1,0 +1,44 @@
+---
+import FaqAccordion from './FaqAccordion.astro';
+import Icon from './Icon.astro';
+import type { FaqEntry } from '../data/faq';
+import { business } from '../data/site';
+import { url } from '../lib/url';
+
+interface Props {
+  entries: FaqEntry[];
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  showAllLink?: boolean;
+  class?: string;
+}
+
+const {
+  entries,
+  eyebrow = 'Gut zu wissen',
+  title = 'Häufige Fragen.',
+  intro = 'Die wichtigsten Antworten für Ihre Anfrage.',
+  showAllLink = true,
+  class: className = 'section-light',
+} = Astro.props;
+---
+
+<section class:list={['section faq-section', className]} id="faq">
+  <div class="container faq-grid">
+    <div class="faq-intro reveal">
+      <p class="eyebrow eyebrow-dark">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p>{intro}</p>
+      <div class="faq-contact-card">
+        <span><Icon name="phone" /></span>
+        <div><small>Frage nicht dabei?</small><strong>{business.phone.display}</strong></div>
+        <a href={business.phone.href} aria-label={`${business.shortName} anrufen`}>→</a>
+      </div>
+      {showAllLink && (
+        <p class="faq-more"><a class="text-link" href={url('faq/')}>Alle Fragen ansehen <span aria-hidden="true">→</span></a></p>
+      )}
+    </div>
+    <FaqAccordion entries={entries} />
+  </div>
+</section>

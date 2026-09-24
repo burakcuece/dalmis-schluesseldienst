@@ -1,0 +1,17 @@
+---
+import { business } from '../data/site';
+import { url } from '../lib/url';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<a class:list={['brand', className]} href={url()} aria-label={`${business.shortName} Startseite`}>
+  <span class="brand-mark" aria-hidden="true">
+    <svg viewBox="0 0 40 40"><path d="M20 2 35 8v11c0 9.5-6.25 16.15-15 19C11.25 35.15 5 28.5 5 19V8l15-6Z"></path><path class="brand-key" d="M25.7 12.7a5 5 0 0 0-7.9 5.98l-5.5 5.5v3.12h3.12l1.5-1.5h2.3v-2.3l2.16-2.16a5 5 0 0 0 4.32-8.64Zm-1.42 3.58a1.5 1.5 0 1 1 0-2.12 1.5 1.5 0 0 1 0 2.12Z"></path></svg>
+  </span>
+  <span class="brand-copy"><strong>{business.shortName}</strong><small>{business.tagline}</small></span>
+</a>

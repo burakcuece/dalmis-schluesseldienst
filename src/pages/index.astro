@@ -1,0 +1,80 @@
+---
+import AreaSection from '../components/AreaSection.astro';
+import ContactButtons from '../components/ContactButtons.astro';
+import FaqSection from '../components/FaqSection.astro';
+import FinalCta from '../components/FinalCta.astro';
+import Icon from '../components/Icon.astro';
+import OwnerSection from '../components/OwnerSection.astro';
+import PriceClarity from '../components/PriceClarity.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getFaqs } from '../data/faq';
+import { getService } from '../data/services';
+import { business } from '../data/site';
+import { faqSchema, serviceSchema } from '../lib/schema';
+import { asset, url } from '../lib/url';
+
+const homeFaqs = getFaqs(['orte', 'kosten-tuer', 'auto', 'angaben']);
+
+// IDs der Karten bleiben erhalten, damit alte Sprungmarken weiter funktionieren
+const cards = [
+  { service: getService('tueroeffnung'), variant: 'featured', id: 'tueroeffnung' },
+  { service: getService('autooeffnung'), variant: 'default', id: 'auto' },
+  { service: getService('schloss-zylinder'), variant: 'compact', id: undefined },
+  { service: getService('sicherheitstechnik'), variant: 'compact', id: 'sicherheitstechnik' },
+] as const;
+---
+
+<BaseLayout
+  fullTitle={`Schlüsseldienst ${business.city} & Autoöffnung | ${business.shortName}`}
+  title="Startseite"
+  description={`${business.shortName}: mobiler Schlüsseldienst in ${business.city} und Umgebung für Türöffnung, Autoöffnung, Schlosswechsel und Sicherheitstechnik. Persönlich anrufen oder per WhatsApp anfragen.`}
+  path=""
+  schema={[
+    serviceSchema(
+      `Mobiler Schlüsseldienst ${business.city}`,
+      'Mobiler Schlüsseldienst, Türöffnung, Autoöffnung, Schlosswechsel und Sicherheitstechnik',
+      '',
+    ),
+    faqSchema(homeFaqs, ''),
+  ]}
+>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Mobiler Schlüsseldienst aus {business.city}</p>
+        <h1><span>Ausgesperrt?</span><strong>Wir kommen direkt zu Ihnen.</strong></h1>
+        <p class="hero-lead">
+          Ob Haustür, Fahrzeug oder Schloss: Bei {business.shortName} sprechen Sie direkt mit {business.owner}. Nennen Sie Ihren Standort und schildern Sie kurz, was passiert ist.
+        </p>
+        <ContactButtons class="hero-actions" />
+        <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
+      </div>
+      <div class="hero-visual">
+        <img src={asset('door-lock.webp')} width="1400" height="933" alt="Türgriff und Schließzylinder an einer Haustür" fetchpriority="high" decoding="async" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light services-section" id="leistungen">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow eyebrow-dark">Leistungen</p>
+        <h2>Wobei kann {business.shortName} helfen?</h2>
+        <p>Vier Bereiche, ein Ansprechpartner. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
+      </div>
+      <div class="services-grid">
+        {cards.map((card) => <ServiceCard service={card.service} variant={card.variant} id={card.id} />)}
+      </div>
+      <p class="more-link"><a class="text-link" href={url('leistungen/')}>Alle Leistungen im Überblick <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+
+  <PriceClarity />
+  <ProcessSteps />
+  <OwnerSection />
+  <AreaSection />
+  <FaqSection entries={homeFaqs} />
+  <FinalCta />
+</BaseLayout>

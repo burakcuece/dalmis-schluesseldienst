@@ -1,0 +1,46 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+import { business } from '../data/site';
+import { mainNavigation } from '../data/navigation';
+import { isCurrent, url } from '../lib/url';
+
+const current = Astro.url.pathname;
+const ariaCurrent = (path: string) => (isCurrent(current, path) ? 'page' : undefined);
+---
+
+<header class="site-header" data-header>
+  <div class="header-inner container-wide">
+    <Brand />
+
+    <nav class="main-nav" id="main-navigation" aria-label="Hauptnavigation" data-navigation>
+      {mainNavigation.map((item) =>
+        item.children ? (
+          <div class="nav-item">
+            <a href={url(item.path)} aria-current={ariaCurrent(item.path)}>{item.label}</a>
+            <div class="subnav">
+              {item.children.map((child) => (
+                <a href={url(child.path)} aria-current={ariaCurrent(child.path)}>{child.label}</a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a href={url(item.path)} aria-current={ariaCurrent(item.path)}>{item.label}</a>
+        )
+      )}
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button-primary header-call" href={business.phone.href}>
+        <Icon name="phone" />
+        Jetzt anrufen
+      </a>
+      <a class="header-phone-icon" href={business.phone.href} aria-label={`${business.shortName} unter ${business.phone.display} anrufen`}>
+        <Icon name="phone" />
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Menü öffnen" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,75 @@
+---
+import ContactButtons from '../../components/ContactButtons.astro';
+import Icon from '../../components/Icon.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { business } from '../../data/site';
+import { getService } from '../../data/services';
+
+const service = getService('tueroeffnung');
+---
+
+<ServiceLayout
+  slug="tueroeffnung"
+  metaTitle={`Türöffnung in ${business.city} – ausgesperrt?`}
+  description={`Tür zugefallen oder abgeschlossen? ${business.shortName} öffnet Wohnungs- und Haustüren in ${business.city} und Umgebung. Preis und Vorgehen werden vorab abgestimmt.`}
+  heroTitle="Türöffnung: Ausgesperrt? Wir helfen weiter."
+  lead={`Die Tür ist ins Schloss gefallen oder abgeschlossen und der Schlüssel liegt drinnen? Rufen Sie an oder schreiben Sie per WhatsApp. ${business.owner} klärt mit Ihnen, wie es weitergeht.`}
+  faqIds={['tuer-unterschied', 'tuer-nachweis', 'kosten-tuer', 'preis-wann', 'orte']}
+  faqTitle="Fragen zur Türöffnung."
+>
+  <section class="section section-white">
+    <div class="container split">
+      <div class="prose reveal">
+        <p class="eyebrow eyebrow-dark">Die Situation</p>
+        <h2>Zugefallen oder abgeschlossen?</h2>
+        <p>
+          Für die Türöffnung macht es einen Unterschied, wie Ihre Tür verschlossen ist. Wenn Sie das bei der Anfrage sagen können,
+          lässt sich der Einsatz besser einschätzen.
+        </p>
+        <ul class="info-grid">
+          <li class="info-card">
+            <span class="info-card-icon"><Icon name="door" /></span>
+            <h3>Tür zugefallen</h3>
+            <p>Die Tür ist nur ins Schloss gefallen, die Falle ist eingerastet. Der Riegel wurde nicht mit dem Schlüssel vorgeschlossen.</p>
+          </li>
+          <li class="info-card">
+            <span class="info-card-icon"><Icon name="lock" /></span>
+            <h3>Tür abgeschlossen</h3>
+            <p>Der Riegel ist ausgefahren, weil die Tür mit dem Schlüssel abgeschlossen wurde. Das bedeutet meist mehr Aufwand.</p>
+          </li>
+        </ul>
+        <div class="callout">
+          <Icon name="info" />
+          <p>
+            <strong>Bitte keine eigenen Versuche mit Werkzeug.</strong> Hebeln oder Bohren kann Tür, Rahmen und Schloss beschädigen und
+            eine Öffnung am Ende aufwendiger machen.
+          </p>
+        </div>
+      </div>
+
+      <aside class="aside-card reveal" aria-labelledby="tuer-angaben">
+        <h2 id="tuer-angaben">Das hilft bei Ihrer Anfrage</h2>
+        <ul class="check-list">
+          <li><Icon name="check" />Ihr Standort mit Adresse und gegebenenfalls Etage</li>
+          <li><Icon name="check" />Tür zugefallen oder abgeschlossen</li>
+          <li><Icon name="check" />Art der Tür, z. B. Wohnungstür oder Haustür</li>
+          <li><Icon name="check" />Ob innen ein Schlüssel steckt</li>
+          <li><Icon name="check" />Ein Nachweis, dass Sie zum Zutritt berechtigt sind</li>
+        </ul>
+        <ContactButtons class="aside-actions" whatsappText={service.whatsappText} />
+      </aside>
+    </div>
+  </section>
+
+  <ProcessSteps
+    tone="light"
+    title="So läuft eine Türöffnung ab."
+    steps={[
+      { title: 'Kontakt aufnehmen', text: 'Anrufen oder per WhatsApp schreiben und den Standort nennen.' },
+      { title: 'Situation schildern', text: 'Zugefallen oder abgeschlossen? Welche Tür? Kurz beschreiben, was passiert ist.' },
+      { title: 'Preis und Vorgehen abstimmen', text: 'Bevor gearbeitet wird, besprechen wir den voraussichtlichen Preis.' },
+      { title: 'Öffnung vor Ort', text: 'Der mobile Service kommt zu Ihnen und öffnet die Tür.' },
+    ]}
+  />
+</ServiceLayout>
