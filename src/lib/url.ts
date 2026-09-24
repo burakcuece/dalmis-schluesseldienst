@@ -1,7 +1,7 @@
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const site = (import.meta.env.SITE ?? '').replace(/\/$/, '');
 
-/** Interner Link relativ zur Basis-URL, z. B. `url('preise/')` → `/dalmis-schluesseldienst/preise/` */
+/** Interner Link relativ zur Basis-URL, z. B. `url('preise/')` → `/preise/` */
 export function url(path = ''): string {
   return base + path.replace(/^\//, '');
 }
