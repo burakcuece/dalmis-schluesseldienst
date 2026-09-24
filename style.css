@@ -4424,3 +4424,228 @@ h3 {
     font-size: 0.85rem;
   }
 }
+
+/* 2026-09: fewer visual templates, four distinct service offers. */
+.reference-layout {
+  --surface: #f6f5f1;
+  --surface-border: #e5e2db;
+  background: var(--surface);
+}
+
+.reference-layout .hero {
+  background: #faf9f6;
+}
+
+.reference-layout .hero .eyebrow {
+  color: #725c00;
+  letter-spacing: 0.085em;
+}
+
+.reference-layout .hero-lead {
+  margin-top: clamp(1.35rem, 3vw, 2rem);
+  color: #404442;
+}
+
+.reference-layout .hero-visual img {
+  border-radius: 14px;
+  box-shadow: 0 18px 38px rgba(17, 17, 17, 0.12);
+}
+
+.reference-layout .services-section {
+  padding-top: clamp(3.25rem, 7vw, 5.5rem);
+  background: var(--surface);
+}
+
+.reference-layout .services-section > .container,
+.reference-layout .process-section > .container {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.reference-layout .services-section .section-heading {
+  margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.reference-layout .services-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(0.85rem, 2.3vw, 1.35rem);
+}
+
+.reference-layout .service-card,
+.reference-layout .service-card-featured {
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.reference-layout .service-card-media {
+  background: #e7e5df;
+}
+
+.reference-layout .service-card-media img {
+  height: clamp(195px, 29vw, 280px);
+  object-position: center;
+}
+
+.reference-layout .service-card-content {
+  min-height: 173px;
+  padding: clamp(1.15rem, 2vw, 1.6rem);
+}
+
+.reference-layout .service-card-featured {
+  border-color: #191919;
+}
+
+.reference-layout .service-card-featured .service-card-content {
+  background: #191919;
+}
+
+.reference-layout .service-card-featured h3,
+.reference-layout .service-card-featured p {
+  color: #fff;
+}
+
+.reference-layout .service-card-featured p {
+  opacity: 0.78;
+}
+
+.reference-layout .service-card-featured a {
+  color: #ffd000;
+}
+
+.reference-layout .service-card-compact {
+  display: grid;
+  grid-template-columns: minmax(104px, 35%) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.reference-layout .service-card-compact .service-card-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 195px;
+  object-fit: cover;
+}
+
+.reference-layout .service-card-compact .service-card-content {
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(0.9rem, 2vw, 1.4rem);
+}
+
+.reference-layout .service-card-compact h3 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.reference-layout .service-card-compact p {
+  font-size: clamp(0.8rem, 1.35vw, 0.93rem);
+}
+
+.reference-layout .service-card-compact a {
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.reference-layout .price-clarity-details .button {
+  margin-top: 0.75rem;
+}
+
+.reference-layout .process-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: #fff;
+}
+
+.reference-layout .process-card {
+  border-top-color: #dad5c9;
+}
+
+.reference-layout .owner-section {
+  background: #f8f8f5;
+}
+
+.reference-layout .owner-photo {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.reference-layout .owner-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.reference-layout .owner-photo figcaption {
+  padding-top: 0.55rem;
+  color: #686862;
+  font-size: 0.72rem;
+}
+
+.reference-layout .owner-copy h2 {
+  max-width: 16ch;
+}
+
+.reference-layout .owner-contact a {
+  min-height: 55px;
+  padding: 0.6rem 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #deded9;
+  border-radius: 0;
+}
+
+.reference-layout .owner-contact a:hover {
+  background: transparent;
+  border-color: #c5a100;
+}
+
+.reference-layout .faq-section {
+  background: var(--surface);
+}
+
+.reference-layout .accordion-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #d8d5cc;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.reference-layout .accordion-item:has(button[aria-expanded="true"]) {
+  border-color: #c7a800;
+  box-shadow: none;
+}
+
+.reference-layout .accordion-item button {
+  padding-inline: 0.2rem;
+}
+
+.reference-layout .image-disclosure {
+  max-width: 340px;
+  margin-top: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+  .reference-layout .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 359px) {
+  .reference-layout .service-card-compact {
+    display: flex;
+  }
+
+  .reference-layout .service-card-compact .service-card-media img {
+    height: 145px;
+    min-height: 0;
+  }
+}
