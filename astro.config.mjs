@@ -29,7 +29,7 @@ export default defineConfig({
       provider: fontProviders.google(),
       name: 'Barlow',
       cssVariable: '--font-body',
-      weights: [400, 500, 600, 700],
+      weights: [400, 500, 600, 700, 800, 900],
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['sans-serif'],

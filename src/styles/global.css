@@ -598,69 +598,35 @@ h3 {
 }
 
 .hero h1 {
-  max-width: 14ch;
-  margin-bottom: 1.4rem;
+  max-width: 650px;
+  margin-bottom: 0.75rem;
   color: var(--black);
-  font-size: clamp(2.5rem, 9vw, 4.6rem);
-  font-weight: 800;
-  line-height: 0.98;
+  font-family: var(--font);
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
-.hero-kicker {
-  margin-bottom: 0.9rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-/* Signatur: Telefonnummer wie die Beschriftung auf dem Servicewagen */
-.hero-number {
-  display: grid;
+.hero h1 span {
+  display: block;
   width: fit-content;
   max-width: 100%;
-  gap: 0.2rem;
-  padding: 0.85rem 1.3rem 0.95rem;
-  color: var(--yellow);
-  background: var(--black);
-  border-left: 8px solid var(--yellow);
-  border-radius: 4px;
-  transition: background-color var(--transition);
-}
-
-.hero-number:hover,
-.hero-number:focus-visible {
-  background: #000;
-}
-
-.hero-number-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.hero-number-label svg {
-  width: 16px;
-  height: 16px;
-  color: var(--yellow);
-}
-
-.hero-number strong {
-  font-family: var(--font-head);
-  font-size: clamp(2.4rem, 11vw, 4.4rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.01em;
+  background: linear-gradient(transparent 78%, rgba(245, 196, 0, 0.78) 78%);
+  font-size: clamp(2.05rem, 10.5vw, 5.3rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
 }
 
-.hero-secondary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
+.hero h1 strong {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: clamp(2rem, 8.5vw, 3.65rem);
+  font-weight: 800;
+  line-height: 1.02;
 }
 
 .hero-lead {
@@ -683,6 +649,10 @@ h3 {
   width: 100%;
 }
 
+
+.hero .button-primary {
+  box-shadow: 0 15px 30px rgba(245, 196, 0, 0.24);
+}
 
 .hero-proofline {
   display: flex;
@@ -1722,6 +1692,14 @@ h3 {
     white-space: normal;
   }
 
+  .hero h1 span {
+    font-size: 2.05rem;
+  }
+
+  .hero h1 strong {
+    font-size: 1.85rem;
+  }
+
 
   .service-card-compact {
     display: flex;
@@ -1980,6 +1958,15 @@ h3 {
     grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
     align-items: center;
     gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .hero h1 span {
+    font-size: clamp(4.1rem, 5.5vw, 5rem);
+  }
+
+  .hero h1 strong {
+    max-width: 15ch;
+    font-size: clamp(2.75rem, 4vw, 3.75rem);
   }
 
 

@@ -19,10 +19,10 @@ const isHero = variant === 'hero';
 <div class={className}>
   <a class="button button-primary button-large" href={business.phone.href}>
     <Icon name="phone" />
-    {isHero ? 'Anrufen' : business.phone.display}
+    {isHero ? <span><small>Direkt verbinden</small>Jetzt anrufen</span> : <span><small>Telefon</small>{business.phone.display}</span>}
   </a>
   <a class:list={['button button-large', isHero ? 'button-light' : 'button-outline-light']} href={whatsappUrl(whatsappText)} target="_blank" rel="noopener noreferrer">
     <Icon name="whatsapp" />
-    WhatsApp schreiben
+    {isHero ? <span><small>Standort senden</small>WhatsApp schreiben</span> : <span><small>Nachricht senden</small>WhatsApp</span>}
   </a>
 </div>

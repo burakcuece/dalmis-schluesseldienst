@@ -1,5 +1,6 @@
 ---
 import AreaSection from '../components/AreaSection.astro';
+import ContactButtons from '../components/ContactButtons.astro';
 import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
@@ -9,7 +10,7 @@ import ServiceCard from '../components/ServiceCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getFaqs } from '../data/faq';
 import { services } from '../data/services';
-import { business, whatsappUrl } from '../data/site';
+import { business } from '../data/site';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import { asset, url } from '../lib/url';
 
@@ -33,24 +34,16 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
     faqSchema(homeFaqs, ''),
   ]}
 >
-  <section class="hero hero-home" id="top">
+  <section class="hero" id="top">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="hero-kicker">Mobiler Schlüsseldienst · {business.city} und Umgebung</p>
-        <h1>Ausgesperrt? Rufen Sie direkt an.</h1>
-        <a class="hero-number" href={business.phone.href}>
-          <span class="hero-number-label"><Icon name="phone" />{business.owner} persönlich</span>
-          <strong>{business.phone.display}</strong>
-        </a>
+        <p class="eyebrow">Mobiler Schlüsseldienst aus {business.city}</p>
+        <h1><span>Ausgesperrt?</span><strong>Wir kommen direkt zu Ihnen.</strong></h1>
         <p class="hero-lead">
-          Haustür zugefallen, Schlüssel im Auto oder Schloss defekt: Sagen Sie kurz, wo Sie sind und was passiert ist. Den Preis erfahren Sie, bevor gearbeitet wird.
+          Ob Haustür, Fahrzeug oder Schloss: Bei {business.shortName} sprechen Sie direkt mit {business.owner}. Nennen Sie Ihren Standort und schildern Sie kurz, was passiert ist.
         </p>
-        <div class="hero-secondary">
-          <a class="button button-light" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
-            <Icon name="whatsapp" />
-            Standort per WhatsApp senden
-          </a>
-        </div>
+        <ContactButtons class="hero-actions" />
+        <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
       </div>
       <div class="hero-visual">
         <img src={asset('door-lock.webp')} width="1400" height="933" alt="Türgriff und Schließzylinder an einer Haustür" fetchpriority="high" decoding="async" />
