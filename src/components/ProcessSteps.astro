@@ -13,10 +13,10 @@ interface Props {
 }
 
 const defaultSteps: Step[] = [
-  { title: 'Kontakt aufnehmen', text: 'Anrufen oder per WhatsApp schreiben.' },
-  { title: 'Situation schildern', text: 'Standort und Anliegen kurz nennen.' },
-  { title: 'Einsatz abstimmen', text: 'Verfügbarkeit und nächste Schritte gemeinsam klären.' },
-  { title: 'Hilfe vor Ort', text: 'Der mobile Service kommt zu Ihrem Standort.' },
+  { title: 'Anrufen oder schreiben', text: 'Per Telefon oder WhatsApp. Sagen Sie, wo Sie sind und was passiert ist.' },
+  { title: 'Preis erfahren', text: 'Sie hören den voraussichtlichen Preis, bevor wir losfahren.' },
+  { title: 'Entscheiden', text: 'Erst mit Ihrer Zusage wird der Einsatz fest vereinbart.' },
+  { title: 'Hilfe vor Ort', text: 'Wir kommen zu Ihnen und erledigen die Arbeit.' },
 ];
 
 const { title = 'So läuft ein Einsatz ab', steps = defaultSteps, id = 'ablauf', tone = 'white' } = Astro.props;

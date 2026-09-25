@@ -2,7 +2,7 @@
 import FinalCta from '../components/FinalCta.astro';
 import OwnerSection from '../components/OwnerSection.astro';
 import PageHero from '../components/PageHero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import ServiceIndex from '../components/ServiceIndex.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { services } from '../data/services';
 import { business } from '../data/site';
@@ -33,9 +33,7 @@ const crumbs: Crumb[] = [
       <div class="section-heading">
         <h2>Leistungen</h2>
       </div>
-      <div class="services-grid">
-        {services.map((service) => <ServiceCard service={service} variant="compact" />)}
-      </div>
+      <ServiceIndex services={services} />
     </div>
   </section>
 

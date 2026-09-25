@@ -8,7 +8,7 @@ import BaseLayout from './BaseLayout.astro';
 import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import PageHero from '../components/PageHero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
+import ServiceIndex from '../components/ServiceIndex.astro';
 import { getFaqs } from '../data/faq';
 import { getService, servicePath, services, type Service } from '../data/services';
 import { faqSchema, serviceSchema, type Crumb } from '../lib/schema';
@@ -62,9 +62,7 @@ const crumbs: Crumb[] = [
       <div class="section-heading">
         <h2 id="weitere-leistungen">Weitere Leistungen</h2>
       </div>
-      <div class="services-grid services-grid-3">
-        {related.map((entry) => <ServiceCard service={entry} variant="compact" />)}
-      </div>
+      <ServiceIndex services={related} />
     </div>
   </section>
 

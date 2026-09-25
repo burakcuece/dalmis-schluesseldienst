@@ -4,7 +4,6 @@ import Icon from '../../components/Icon.astro';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { business } from '../../data/site';
 import { getService } from '../../data/services';
-import { asset } from '../../lib/url';
 
 const service = getService('schloss-zylinder');
 ---
@@ -39,10 +38,6 @@ const service = getService('schloss-zylinder');
       </div>
 
       <div class="stack">
-        <figure class="content-photo">
-          <img src={asset('service-defective-lock.webp')} width="900" height="600" alt="Beispielmotiv: defektes Türschloss" loading="lazy" decoding="async" />
-          <figcaption>Beispielmotiv · Defektes Schloss</figcaption>
-        </figure>
         <div class="callout">
           <Icon name="info" />
           <p>

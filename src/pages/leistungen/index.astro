@@ -1,8 +1,8 @@
 ---
 import FinalCta from '../../components/FinalCta.astro';
 import PageHero from '../../components/PageHero.astro';
-import ProcessSteps from '../../components/ProcessSteps.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+import PricePromise from '../../components/PricePromise.astro';
+import ServiceIndex from '../../components/ServiceIndex.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { services } from '../../data/services';
 import { business } from '../../data/site';
@@ -28,12 +28,10 @@ const crumbs: Crumb[] = [
 
   <section class="section section-light services-section">
     <div class="container">
-      <div class="services-grid">
-        {services.map((service, index) => <ServiceCard service={service} headingLevel="h2" variant={index === 0 ? 'featured' : 'default'} />)}
-      </div>
+      <ServiceIndex services={services} />
     </div>
   </section>
 
-  <ProcessSteps />
+  <PricePromise />
   <FinalCta />
 </BaseLayout>

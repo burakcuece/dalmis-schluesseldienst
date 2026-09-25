@@ -1,0 +1,30 @@
+---
+/** Leistungen als Liste mit Icon, Titel und Kurztext. Ersetzt die früheren Bildkarten. */
+import Icon from './Icon.astro';
+import type { Service } from '../data/services';
+import { servicePath } from '../data/services';
+import { url } from '../lib/url';
+
+interface Props {
+  services: Service[];
+  /** Optionale Sprungmarken je Leistung, z. B. für alte Anker der Startseite */
+  ids?: Partial<Record<Service['slug'], string>>;
+}
+
+const { services, ids = {} } = Astro.props;
+---
+
+<ul class="service-index">
+  {services.map((service) => (
+    <li id={ids[service.slug]}>
+      <a href={url(servicePath(service.slug))}>
+        <Icon name={service.icon} />
+        <span class="service-index-copy">
+          <strong>{service.title}</strong>
+          <span>{service.teaser}</span>
+        </span>
+        <span class="service-index-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  ))}
+</ul>

@@ -17,8 +17,8 @@ export const services: Service[] = [
     slug: 'tueroeffnung',
     title: 'Türöffnung',
     teaser: 'Die Tür ist zugefallen oder abgeschlossen? Schildern Sie kurz die Situation.',
-    image: 'service-door-opening.webp',
-    imageAlt: 'Hand an einer geöffneten Wohnungstür',
+    image: 'mobile-tools.webp',
+    imageAlt: 'Werkzeug und Schließzylinder auf einer Arbeitsfläche vor einer Tür',
     icon: 'door',
     whatsappText:
       'Hallo Herr Dalmis, ich habe mich ausgesperrt und brauche eine Türöffnung. Die Tür ist (zugefallen / abgeschlossen). Mein Standort ist …',
@@ -37,8 +37,8 @@ export const services: Service[] = [
     slug: 'schloss-zylinder',
     title: 'Schloss & Zylinder',
     teaser: 'Defektes Schloss, Schlosswechsel oder neuer Schließzylinder: Wir klären, was gebraucht wird.',
-    image: 'service-lock-replacement.webp',
-    imageAlt: 'Arbeit an einem Schließzylinder in einer Holztür',
+    image: 'service-defective-lock.webp',
+    imageAlt: 'Ausgebautes Einsteckschloss und Schließzylinder',
     icon: 'lock',
     whatsappText:
       'Hallo Herr Dalmis, ich habe eine Anfrage zu einem Schloss bzw. Schließzylinder. Worum es geht: … Mein Standort ist …',
