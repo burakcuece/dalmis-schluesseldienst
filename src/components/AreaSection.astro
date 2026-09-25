@@ -40,7 +40,7 @@ const gap = (anchor: Anchor) => (anchor === 'start' ? 1.6 : anchor === 'end' ? -
 <section class="section section-dark area-section" id="einsatzgebiet">
   <div class="container area-grid">
     <div class="area-copy">
-      <h2>Einsatzgebiet: {r} km rund um {business.city}</h2>
+      <h2>Einsatzgebiet: {`${r}\u00a0km`} rund um {business.city}</h2>
       <p class="feature-lead">
         Von unserem Firmensitz in {business.city} fahren wir je nach Auftrag bis etwa {r} Kilometer weit. Ihr Ort liegt knapp
         außerhalb? Fragen Sie trotzdem.

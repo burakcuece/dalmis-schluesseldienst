@@ -1,25 +1,50 @@
 ---
+/**
+ * Kontakt-Abschnitt am Seitenende: alle Kontaktwege, Ansprechpartner und
+ * Erreichbarkeit an einer Stelle. Ersetzt verstreute Kontaktangaben.
+ */
 import ContactButtons from './ContactButtons.astro';
+import Icon from './Icon.astro';
+import { business, mailtoUrl } from '../data/site';
 
 interface Props {
   title?: string;
-  text?: string;
   whatsappText?: string;
 }
 
-const {
-  title = 'Rufen Sie uns an',
-  text = 'Schildern Sie kurz Ihr Anliegen und senden Sie bei Bedarf Ihren Standort.',
-  whatsappText,
-} = Astro.props;
+const { title = 'Ausgesperrt? Wir sind erreichbar.', whatsappText } = Astro.props;
+// Frage und Antwort als eigene Zeilen, damit die Überschrift nicht mitten im Satz umbricht
+const [question, ...rest] = title.split('? ');
+const answer = rest.join('? ');
 ---
 
-<section class="final-cta" id="kontakt">
+<section class="final-cta" id="kontakt" aria-labelledby="kontakt-title">
   <div class="container final-cta-inner">
-    <div>
-      <h2>{title}</h2>
-      <p>{text}</p>
+    <div class="final-cta-copy">
+      <h2 id="kontakt-title">
+        {answer ? <><span class="final-cta-q">{question}?</span> <span>{answer}</span></> : title}
+      </h2>
+      <dl class="contact-facts">
+        <div>
+          <dt>Ansprechpartner</dt>
+          <dd>{business.owner}, Inhaber, {business.city}</dd>
+        </div>
+        <div>
+          <dt>Erreichbar</dt>
+          <dd>{business.hours.regular}, im Notdienst rund um die Uhr</dd>
+        </div>
+        <div>
+          <dt>Preis</dt>
+          <dd>Den hören Sie am Telefon, bevor wir losfahren.</dd>
+        </div>
+      </dl>
     </div>
-    <ContactButtons variant="dark" class="final-cta-actions" whatsappText={whatsappText} />
+    <div class="final-cta-side">
+      <ContactButtons variant="dark" class="final-cta-actions" whatsappText={whatsappText} />
+      <p class="final-cta-mail">
+        <Icon name="mail" />
+        <span>Nicht eilig, z. B. Beratung? <a href={mailtoUrl}>{business.email}</a></span>
+      </p>
+    </div>
   </div>
 </section>

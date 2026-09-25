@@ -5,23 +5,26 @@ interface Props {
   entries: FaqEntry[];
   /** Eindeutiges Präfix für die IDs der Antwortfelder auf dieser Seite */
   idPrefix?: string;
+  /** Erste Antwort beim Laden geöffnet zeigen */
+  openFirst?: boolean;
 }
 
-const { entries, idPrefix = 'faq' } = Astro.props;
+const { entries, idPrefix = 'faq', openFirst = false } = Astro.props;
 ---
 
 <div class="accordion" data-accordion>
-  {entries.map((entry) => {
+  {entries.map((entry, index) => {
     const panelId = `${idPrefix}-${entry.id}`;
+    const open = openFirst && index === 0;
     return (
       <article class="accordion-item">
         <h3>
-          <button type="button" aria-expanded="false" aria-controls={panelId}>
+          <button type="button" aria-expanded={open ? 'true' : 'false'} aria-controls={panelId}>
             <span>{entry.question}</span>
             <span class="accordion-icon" aria-hidden="true"></span>
           </button>
         </h3>
-        <div class="accordion-panel" id={panelId} hidden>
+        <div class="accordion-panel" id={panelId} hidden={!open}>
           {entry.answer.map((paragraph) => <p>{paragraph}</p>)}
         </div>
       </article>

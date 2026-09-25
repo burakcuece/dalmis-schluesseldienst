@@ -4,7 +4,6 @@ import ContactButtons from '../components/ContactButtons.astro';
 import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
-import OwnerSection from '../components/OwnerSection.astro';
 import PricePromise from '../components/PricePromise.astro';
 import QuickHelp from '../components/QuickHelp.astro';
 import ServiceIndex from '../components/ServiceIndex.astro';
@@ -68,8 +67,7 @@ const legacyIds = { tueroeffnung: 'tueroeffnung', autooeffnung: 'auto', sicherhe
     </div>
   </section>
 
-  <OwnerSection tone="white" />
-  <AreaSection />
+  <AreaSection showMoreLink={false} />
   <FaqSection entries={homeFaqs} />
   <FinalCta />
 </BaseLayout>
