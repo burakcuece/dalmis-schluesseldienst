@@ -31,6 +31,13 @@ export function businessSchema(): SchemaNode {
       addressCountry: 'DE',
     },
     areaServed: business.places.map((name) => ({ '@type': 'City', name })),
+    // Durch den Notdienst rund um die Uhr erreichbar
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
     founder: { '@type': 'Person', name: business.owner },
     slogan: business.slogan,
   };

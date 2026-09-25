@@ -5,18 +5,17 @@ import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
 import OwnerSection from '../components/OwnerSection.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
+import PricePromise from '../components/PricePromise.astro';
 import QuickHelp from '../components/QuickHelp.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import TrustStrip from '../components/TrustStrip.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getFaqs } from '../data/faq';
-import { services } from '../data/services';
+import { servicePath, services } from '../data/services';
 import { business } from '../data/site';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import { asset, url } from '../lib/url';
 
-const homeFaqs = getFaqs(['orte', 'kosten-tuer', 'auto', 'angaben']);
+const homeFaqs = getFaqs(['erreichbarkeit', 'orte', 'kosten-tuer', 'bezahlung', 'auto']);
 
 // Sprungmarken der früheren einseitigen Website bleiben erhalten
 const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooeffnung: 'auto', sicherheitstechnik: 'sicherheitstechnik' };
@@ -42,10 +41,10 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
         <p class="eyebrow">Mobiler Schlüsseldienst aus {business.city}</p>
         <h1><span>Ausgesperrt?</span><strong>Wir kommen direkt zu Ihnen.</strong></h1>
         <p class="hero-lead">
-          Ob Haustür, Fahrzeug oder Schloss: Nennen Sie uns Ihren Standort und schildern Sie kurz, was passiert ist.
+          Ob Haustür, Fahrzeug oder Schloss: Rufen Sie an. Den Preis erfahren Sie, bevor wir losfahren.
         </p>
         <ContactButtons class="hero-actions" />
-        <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
+        <p class="hero-proofline"><Icon name="clock" /> {business.hours.regular}, im Notdienst rund um die Uhr</p>
       </div>
       <div class="hero-visual">
         <img src={asset('door-lock.webp')} width="1400" height="933" alt="Türgriff und Schließzylinder an einer Haustür" fetchpriority="high" decoding="async" />
@@ -56,29 +55,31 @@ const legacyIds: Record<string, string> = { tueroeffnung: 'tueroeffnung', autooe
   <TrustStrip />
   <QuickHelp />
 
-  <section class="section section-white services-section" id="leistungen">
+  <PricePromise />
+
+  <section class="section section-light services-section" id="leistungen">
     <div class="container">
       <div class="section-heading">
         <h2>Leistungen</h2>
-        <p>Vier Bereiche, alles aus einer Hand. Fragen Sie direkt an, welche Lösung für Ihre Situation möglich ist.</p>
       </div>
-      <div class="services-grid services-grid-4">
-        {services.map((service) => <ServiceCard service={service} id={legacyIds[service.slug]} />)}
-      </div>
+      <ul class="service-index">
+        {services.map((service) => (
+          <li id={legacyIds[service.slug]}>
+            <a href={url(servicePath(service.slug))}>
+              <Icon name={service.icon} />
+              <span class="service-index-copy">
+                <strong>{service.title}</strong>
+                <span>{service.teaser}</span>
+              </span>
+              <span class="service-index-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
       <p class="more-link"><a class="text-link" href={url('leistungen/')}>Alle Leistungen im Überblick</a></p>
     </div>
   </section>
 
-  <ProcessSteps
-    tone="light"
-    title="So läuft ein Einsatz ab"
-    steps={[
-      { title: 'Anrufen oder schreiben', text: 'Per Telefon oder WhatsApp. Sagen Sie, wo Sie sind und was passiert ist.' },
-      { title: 'Preis erfahren', text: 'Sie hören den voraussichtlichen Preis und das Vorgehen, bevor jemand losfährt.' },
-      { title: 'Entscheiden', text: 'Erst mit Ihrer Zusage wird der Einsatz fest vereinbart.' },
-      { title: 'Hilfe vor Ort', text: 'Wir kommen zu Ihnen und erledigen die Arbeit.' },
-    ]}
-  />
   <OwnerSection tone="white" />
   <AreaSection />
   <FaqSection entries={homeFaqs} />

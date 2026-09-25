@@ -14,7 +14,7 @@ const crumbs: Crumb[] = [
   { label: 'Preise', path: 'preise/' },
 ];
 
-const entries = getFaqs(['kosten-tuer', 'preis-wann', 'serioes']);
+const entries = getFaqs(['kosten-tuer', 'preis-wann', 'bezahlung', 'serioes']);
 
 const factors: { title: string; text: string }[] = [
   { title: 'Die Situation', text: 'Eine zugefallene Tür ist etwas anderes als eine abgeschlossene.' },
@@ -26,7 +26,7 @@ const factors: { title: string; text: string }[] = [
 ---
 
 <BaseLayout
-  title={`Preise für Schlüsseldienst in ${business.city} – vorab abgestimmt`}
+  title={`Preise für Schlüsseldienst in ${business.city}: vorab abgestimmt`}
   description={`Was kostet ein Schlüsseldienst in ${business.city}? Bei ${business.shortName} werden Preis und Vorgehen vor Beginn besprochen. Diese Faktoren beeinflussen die Kosten.`}
   path="preise/"
   crumbs={crumbs}
@@ -89,7 +89,7 @@ const factors: { title: string; text: string }[] = [
         <p>Schildern Sie kurz Ihre Situation. Wir nennen Ihnen den voraussichtlichen Preis, bevor es losgeht.</p>
         <a class="button button-primary button-large" href={business.phone.href}>
           <Icon name="phone" />
-          {business.phone.display} anrufen
+          Anrufen
         </a>
       </aside>
     </div>

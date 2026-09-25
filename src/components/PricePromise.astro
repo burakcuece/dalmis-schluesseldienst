@@ -1,0 +1,40 @@
+---
+/**
+ * Preis-Zusage (Startseite). Ersetzt fehlende Bewertungen durch klare,
+ * überprüfbare Zusagen. Nur bestätigte Abläufe aufnehmen.
+ */
+import { business } from '../data/site';
+import { url } from '../lib/url';
+
+const promises: { title: string; text: string }[] = [
+  {
+    title: 'Den Preis hören Sie am Telefon.',
+    text: 'Sie schildern kurz die Situation. Wir nennen den voraussichtlichen Preis und das Vorgehen, bevor wir losfahren.',
+  },
+  {
+    title: 'Ohne Ihre Zusage fahren wir nicht los.',
+    text: 'Sie entscheiden in Ruhe. Erst mit Ihrem OK ist der Einsatz fest vereinbart.',
+  },
+  {
+    title: 'Sie wissen, mit wem Sie sprechen.',
+    text: `Ihr Ansprechpartner ist ${business.owner}, Inhaber von ${business.shortName} mit Firmensitz in ${business.city}.`,
+  },
+];
+---
+
+<section class="section section-white promise-section" aria-labelledby="promise-title">
+  <div class="container">
+    <h2 id="promise-title" class="promise-title">Erst der Preis, dann die Anfahrt.</h2>
+    <ol class="promise-list">
+      {promises.map((promise) => (
+        <li>
+          <h3>{promise.title}</h3>
+          <p>{promise.text}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="promise-more">
+      <a class="text-link" href={url('preise/')}>Woran Sie einen seriösen Schlüsseldienst erkennen</a>
+    </p>
+  </div>
+</section>

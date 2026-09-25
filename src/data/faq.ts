@@ -3,8 +3,9 @@
  * welche Fragen sie zeigen. Die gleichen Texte landen automatisch
  * in den strukturierten Daten (FAQPage) der jeweiligen Seite.
  *
- * Hinweis: Nur bestätigte Angaben verwenden. Keine festen Preise,
- * Anfahrtszeiten oder Erreichbarkeitszeiten ohne Freigabe von DALMIS.
+ * Hinweis: Nur bestätigte Angaben verwenden. Keine Preise und keine
+ * Anfahrtszeiten nennen. Freigegeben sind: Mo-Fr 9-17 Uhr, Notdienst
+ * rund um die Uhr, keine Kartenzahlung vor Ort.
  */
 export type FaqCategory = 'allgemein' | 'preise' | 'tuer' | 'auto' | 'schloss' | 'sicherheit' | 'gebiet';
 
@@ -106,6 +107,23 @@ export const faqs: FaqEntry[] = [
     question: 'Wie erreiche ich DALMIS am schnellsten?',
     answer: [
       'Am schnellsten telefonisch. Per WhatsApp können Sie uns zusätzlich Ihren Standort und Fotos schicken. Anfragen, die nicht eilen, erreichen uns auch per E-Mail.',
+    ],
+  },
+  {
+    id: 'erreichbarkeit',
+    category: 'allgemein',
+    question: 'Wann ist DALMIS erreichbar?',
+    answer: [
+      'Regulär von Montag bis Freitag zwischen 9 und 17 Uhr. Außerhalb dieser Zeiten sind wir im Notdienst rund um die Uhr für Sie da, auch nachts und am Wochenende.',
+      'Einsätze außerhalb der regulären Zeiten können einen anderen Preis haben. Sie erfahren ihn am Telefon, bevor wir losfahren.',
+    ],
+  },
+  {
+    id: 'bezahlung',
+    category: 'preise',
+    question: 'Kann ich vor Ort mit Karte bezahlen?',
+    answer: [
+      'Nein, Kartenzahlung vor Ort ist nicht möglich. Wie Sie bezahlen können, besprechen wir mit Ihnen bei der Anfrage, zusammen mit dem Preis.',
     ],
   },
   {

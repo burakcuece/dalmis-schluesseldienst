@@ -2,6 +2,7 @@
 /**
  * Anruf- und WhatsApp-Button als Paar.
  * `hero`: heller Hintergrund, `dark`: dunkler Hintergrund (Abschluss-CTA).
+ * Beschriftung ist auf allen Seiten gleich: „Anrufen“ und „WhatsApp schreiben“.
  */
 import Icon from './Icon.astro';
 import { business, whatsappUrl } from '../data/site';
@@ -19,10 +20,10 @@ const isHero = variant === 'hero';
 <div class={className}>
   <a class="button button-primary button-large" href={business.phone.href}>
     <Icon name="phone" />
-    {isHero ? <span><small>Direkt verbinden</small>Jetzt anrufen</span> : <span><small>Telefon</small>{business.phone.display}</span>}
+    <span><small>{business.phone.display}</small>Anrufen</span>
   </a>
   <a class:list={['button button-large', isHero ? 'button-light' : 'button-outline-light']} href={whatsappUrl(whatsappText)} target="_blank" rel="noopener noreferrer">
     <Icon name="whatsapp" />
-    {isHero ? <span><small>Standort senden</small>WhatsApp schreiben</span> : <span><small>Nachricht senden</small>WhatsApp</span>}
+    <span><small>Standort senden</small>WhatsApp schreiben</span>
   </a>
 </div>

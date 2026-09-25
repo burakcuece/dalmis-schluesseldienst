@@ -17,6 +17,11 @@ export const business = {
   },
   email: 'serhatdalmis91@gmail.com',
   whatsappNumber: '491774275592',
+  /** Erreichbarkeit, von DALMIS bestätigt. Kartenzahlung vor Ort gibt es nicht. */
+  hours: {
+    regular: 'Mo-Fr 9-17 Uhr',
+    emergency: 'Notdienst rund um die Uhr',
+  },
   /** Orte, aus denen Anfragen typischerweise kommen. Verfügbarkeit wird individuell geklärt. */
   places: ['Herten', 'Westerholt', 'Recklinghausen', 'Marl', 'Gelsenkirchen', 'Dorsten'],
 } as const;

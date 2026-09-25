@@ -4,6 +4,7 @@ import Breadcrumbs from './Breadcrumbs.astro';
 import ContactButtons from './ContactButtons.astro';
 import Icon from './Icon.astro';
 import type { Crumb } from '../lib/schema';
+import { business } from '../data/site';
 import { asset } from '../lib/url';
 
 interface Props {
@@ -28,7 +29,7 @@ const { title, lead, crumbs, image, imageAlt = '', whatsappText, showActions = t
       {showActions && (
         <>
           <ContactButtons class="hero-actions" whatsappText={whatsappText} />
-          <p class="hero-proofline"><Icon name="check" /> Preis und Vorgehen werden vor Beginn abgestimmt.</p>
+          <p class="hero-proofline"><Icon name="clock" /> {business.hours.regular}, im Notdienst rund um die Uhr</p>
         </>
       )}
     </div>

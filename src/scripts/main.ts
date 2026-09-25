@@ -33,9 +33,12 @@ document.addEventListener('click', (event) => {
 
 mediaDesktop.addEventListener('change', () => setMenuState(false));
 
-const updateHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 18);
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
+// Header-Zustand ohne Scroll-Listener: ein Marker 18px unter dem Seitenanfang
+const scrollMarker = document.createElement('div');
+scrollMarker.setAttribute('aria-hidden', 'true');
+scrollMarker.style.cssText = 'position:absolute;top:18px;left:0;width:1px;height:1px;pointer-events:none';
+document.body.prepend(scrollMarker);
+new IntersectionObserver(([entry]) => header?.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(scrollMarker);
 
 // FAQ: pro Akkordeon ist immer nur eine Antwort geöffnet
 document.querySelectorAll<HTMLElement>('[data-accordion]').forEach((accordion) => {

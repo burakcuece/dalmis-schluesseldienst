@@ -9,11 +9,19 @@ interface Props {
 }
 
 const { showMoreLink = true, tone = 'light' } = Astro.props;
+const initials = business.owner
+  .split(' ')
+  .map((part) => part[0])
+  .join('');
 ---
 
 <section class={`section section-${tone} owner-section`} id="ueber-uns">
   <div class="container owner-grid">
-    <h2>Ihr Schlüsseldienst im Revier</h2>
+    <div class="owner-person">
+      <span class="owner-monogram" aria-hidden="true">{initials}</span>
+      <h2>Ihr Schlüsseldienst im Revier</h2>
+      <p class="owner-name"><strong>{business.owner}</strong>Inhaber, {business.city}</p>
+    </div>
     <div class="owner-copy">
       <p class="feature-lead">
         Wir öffnen Türen und Fahrzeuge, tauschen Schlösser und Zylinder und beraten Sie zu Sicherheitstechnik.
@@ -22,6 +30,8 @@ const { showMoreLink = true, tone = 'light' } = Astro.props;
       <dl class="owner-contact">
         <div><dt>Telefon</dt><dd><a href={business.phone.href}>{business.phone.display}</a></dd></div>
         <div><dt>E-Mail</dt><dd><a href={mailtoUrl}>{business.email}</a></dd></div>
+        <div><dt>Erreichbar</dt><dd>{business.hours.regular}</dd></div>
+        <div><dt>Außerhalb</dt><dd>{business.hours.emergency}</dd></div>
       </dl>
       {showMoreLink && <a class="text-link" href={url('ueber-uns/')}>Mehr über {business.shortName}</a>}
     </div>

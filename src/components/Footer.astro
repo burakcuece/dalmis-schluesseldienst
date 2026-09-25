@@ -23,6 +23,8 @@ const year = new Date().getFullYear();
         <a href={business.phone.href}>{business.phone.display}</a>
         <a href={mailtoUrl}>{business.email}</a>
         <span>{business.city}</span>
+        <span>{business.hours.regular}</span>
+        <span>{business.hours.emergency}</span>
       </address>
     </div>
     <div class="footer-column">
