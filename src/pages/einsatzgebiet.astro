@@ -26,34 +26,27 @@ const entries = getFaqs(['orte', 'orte-nachbarstaedte', 'whatsapp', 'angaben']);
 >
   <PageHero
     title={`Schlüsseldienst für ${business.city} und Umgebung`}
-    lead={`Firmensitz ist ${business.city}. Je nach Auftrag ist ${business.shortName} ungefähr ${business.radiusKm} Kilometer rund um ${business.city} unterwegs. Ob ein Einsatz an Ihrem Standort möglich ist, klären wir direkt mit Ihnen.`}
+    lead={`Firmensitz ist ${business.city}. Von hier fahren wir je nach Auftrag bis etwa ${business.radiusKm} Kilometer weit.`}
     crumbs={crumbs}
   />
 
   <AreaSection showMoreLink={false} />
 
   <section class="section section-white">
-    <div class="container split">
+    <div class="container">
       <div class="prose">
         <h2>So finden wir Sie</h2>
         <p>
           Je genauer Ihre Angaben, desto besser lässt sich der Einsatz planen. Am einfachsten senden Sie Ihren Standort direkt über
           WhatsApp.
         </p>
+        <p><a class="text-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Standort per WhatsApp senden</a></p>
         <ul class="check-list">
           <li><Icon name="check" />Adresse mit Hausnummer, bei Mehrfamilienhäusern auch die Etage</li>
           <li><Icon name="check" />Bei Fahrzeugen: Straße, Parkplatz oder Parkhaus</li>
           <li><Icon name="check" />Hinweise zum Zugang, z. B. Hinterhof oder Nebeneingang</li>
         </ul>
       </div>
-      <aside class="aside-card">
-        <h2>Standort senden</h2>
-        <p>Über WhatsApp öffnet sich ein Chat mit einer vorbereiteten Nachricht. Den Standort teilen Sie dort mit der Standortfunktion.</p>
-        <a class="button button-primary button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
-          <Icon name="whatsapp" />
-          Standort per WhatsApp senden
-        </a>
-      </aside>
     </div>
   </section>
 

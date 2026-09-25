@@ -23,16 +23,16 @@ const { title = 'So läuft ein Einsatz ab', steps = defaultSteps, id = 'ablauf',
 ---
 
 <section class={`section section-compact section-${tone} process-section`} id={id}>
-  <div class="container">
-    <div class="section-heading">
-      <h2>{title}</h2>
-    </div>
-    <ol class="process-grid">
+  <div class="container process-layout">
+    <h2>{title}</h2>
+    <ol class="process-list">
       {steps.map((step, index) => (
-        <li class="process-card">
-          <span class="step-number">{index + 1}</span>
-          <h3>{step.title}</h3>
-          <p>{step.text}</p>
+        <li>
+          <span class="step-number" aria-hidden="true">{index + 1}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
         </li>
       ))}
     </ol>

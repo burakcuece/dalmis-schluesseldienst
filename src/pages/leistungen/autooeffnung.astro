@@ -1,12 +1,8 @@
 ---
-import ContactButtons from '../../components/ContactButtons.astro';
 import Icon from '../../components/Icon.astro';
 import ProcessSteps from '../../components/ProcessSteps.astro';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { business } from '../../data/site';
-import { getService } from '../../data/services';
-
-const service = getService('autooeffnung');
 ---
 
 <ServiceLayout
@@ -54,7 +50,6 @@ const service = getService('autooeffnung');
           <li><Icon name="check" />Wo sich der Schlüssel befindet</li>
           <li><Icon name="check" />Eine kurze Beschreibung der Situation</li>
         </ul>
-        <ContactButtons class="aside-actions" whatsappText={service.whatsappText} />
       </aside>
     </div>
   </section>

@@ -1,8 +1,7 @@
 ---
-import ContactButtons from '../../components/ContactButtons.astro';
 import ProcessSteps from '../../components/ProcessSteps.astro';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import { business } from '../../data/site';
+import { business, whatsappUrl } from '../../data/site';
 import { getService } from '../../data/services';
 
 const service = getService('sicherheitstechnik');
@@ -40,6 +39,10 @@ const service = getService('sicherheitstechnik');
           <p>Zusatzschlösser oder Querriegel können die Tür an weiteren Punkten sichern, je nach Tür und Rahmen.</p>
         </li>
       </ul>
+      <p class="section-tip">
+        Tipp: Schicken Sie Fotos Ihrer Tür von innen und außen per WhatsApp. So lässt sich vorab einschätzen, welche Lösungen in Frage
+        kommen. <a class="text-link" href={whatsappUrl(service.whatsappText)} target="_blank" rel="noopener noreferrer">Fotos per WhatsApp senden</a>
+      </p>
     </div>
   </section>
 
@@ -54,16 +57,4 @@ const service = getService('sicherheitstechnik');
     ]}
   />
 
-  <section class="section section-white section-compact">
-    <div class="container">
-      <div class="aside-card">
-        <h2>Beratung anfragen</h2>
-        <p>
-          Schicken Sie gern Fotos Ihrer Tür von innen und außen per WhatsApp. So lässt sich schon vorab besser einschätzen, welche Lösungen
-          in Frage kommen.
-        </p>
-        <ContactButtons class="aside-actions aside-actions-inline" whatsappText={service.whatsappText} />
-      </div>
-    </div>
-  </section>
 </ServiceLayout>

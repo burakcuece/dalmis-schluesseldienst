@@ -1020,44 +1020,68 @@ h3 {
    Ablauf
    -------------------------------------------------------------------------- */
 
-.process-section .section-heading {
-  margin-bottom: 1.4rem;
+.process-layout {
+  display: grid;
+  gap: 1.5rem;
 }
 
-.process-grid {
-  display: grid;
-  gap: 0.85rem;
+.process-layout h2 {
+  max-width: 14ch;
+  margin: 0;
+}
+
+/* Nummerierte Liste statt gleichförmiger Spalten */
+.process-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.process-card {
-  position: relative;
-  padding: 0.9rem 0.6rem 0.35rem;
-  border-top: 2px solid #dad5c9;
+.process-list li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-list li:first-child {
+  border-top: 2px solid var(--black);
 }
 
 .step-number {
-  display: block;
-  margin-bottom: 0.45rem;
-  color: #775f00;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  color: var(--black);
+  background: var(--yellow);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 800;
 }
 
-.process-card h3 {
-  margin-bottom: 0.4rem;
+.process-list h3 {
+  margin: 0.2rem 0 0.3rem;
   color: var(--ink);
-  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
 }
 
-.process-card p {
+.process-list p {
+  max-width: 52ch;
   margin: 0;
   color: var(--text-soft);
-  font-size: 0.97rem;
-  line-height: 1.55;
+}
+
+.section-tip {
+  max-width: 68ch;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  color: var(--text-soft);
+}
+
+.faq-page {
+  max-width: 860px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1935,7 +1959,6 @@ h3 {
     padding-top: calc(var(--header-height) + 4rem);
   }
 
-  .process-grid,
   .info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1976,6 +1999,11 @@ h3 {
 }
 
 @media (min-width: 900px) {
+  .process-layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(3rem, 7vw, 6.5rem);
+  }
+
   .quick-layout {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     align-items: start;
@@ -2180,10 +2208,6 @@ h3 {
 
   .page-hero-simple .hero-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .info-grid-3 {

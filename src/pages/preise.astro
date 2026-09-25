@@ -3,7 +3,7 @@ import FaqSection from '../components/FaqSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
+import PricePromise from '../components/PricePromise.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getFaqs } from '../data/faq';
 import { business } from '../data/site';
@@ -58,16 +58,7 @@ const factors: { title: string; text: string }[] = [
     </div>
   </section>
 
-  <ProcessSteps
-    tone="light"
-    title="So erfahren Sie den Preis vorab"
-    steps={[
-      { title: 'Situation schildern', text: 'Am Telefon oder per WhatsApp: Standort und Anliegen.' },
-      { title: 'Preis erfahren', text: 'Sie hören den voraussichtlichen Preis und das Vorgehen, bevor wir losfahren.' },
-      { title: 'Entscheiden', text: 'Sie entscheiden in Ruhe, ob Sie den Auftrag erteilen.' },
-      { title: 'Einsatz vor Ort', text: 'Erst nach Ihrer Zusage beginnt die Arbeit.' },
-    ]}
-  />
+  <PricePromise />
 
   <section class="section section-white">
     <div class="container split">
@@ -85,13 +76,8 @@ const factors: { title: string; text: string }[] = [
         </ul>
       </div>
       <aside class="aside-card">
-        <h2>Preis erfragen</h2>
-        <p>Schildern Sie kurz Ihre Situation. Wir nennen Ihnen den voraussichtlichen Preis, bevor wir losfahren.</p>
-        <p>Bitte beachten: Kartenzahlung vor Ort ist nicht möglich.</p>
-        <a class="button button-primary button-large" href={business.phone.href}>
-          <Icon name="phone" />
-          Anrufen
-        </a>
+        <h2>Gut zu wissen</h2>
+        <p>Kartenzahlung vor Ort ist nicht möglich. Wie Sie bezahlen können, besprechen wir bei der Anfrage, zusammen mit dem Preis.</p>
       </aside>
     </div>
   </section>

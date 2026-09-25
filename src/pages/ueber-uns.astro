@@ -1,7 +1,9 @@
 ---
+import AreaSection from '../components/AreaSection.astro';
 import FinalCta from '../components/FinalCta.astro';
 import OwnerSection from '../components/OwnerSection.astro';
 import PageHero from '../components/PageHero.astro';
+import PricePromise from '../components/PricePromise.astro';
 import ServiceIndex from '../components/ServiceIndex.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { services } from '../data/services';
@@ -22,13 +24,15 @@ const crumbs: Crumb[] = [
 >
   <PageHero
     title={`Mobiler Schlüsseldienst aus ${business.city}`}
-    lead={`${business.shortName} steht für Schlüsseldienst und Sicherheitstechnik. ${business.slogan}`}
+    lead={`Hinter ${business.shortName} steht ${business.owner} aus ${business.city}. Mobil unterwegs für Türöffnung, Autoöffnung, Schloss und Zylinder sowie Sicherheitstechnik.`}
     crumbs={crumbs}
   />
 
   <OwnerSection />
+  <PricePromise />
+  <AreaSection showMoreLink={false} />
 
-  <section class="section section-white">
+  <section class="section section-light">
     <div class="container">
       <div class="section-heading">
         <h2>Leistungen</h2>

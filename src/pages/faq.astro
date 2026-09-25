@@ -1,11 +1,10 @@
 ---
 import FaqAccordion from '../components/FaqAccordion.astro';
 import FinalCta from '../components/FinalCta.astro';
-import Icon from '../components/Icon.astro';
 import PageHero from '../components/PageHero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faqCategories, faqs, type FaqCategory } from '../data/faq';
-import { business, whatsappUrl } from '../data/site';
+import { business } from '../data/site';
 import { faqSchema, type Crumb } from '../lib/schema';
 
 const crumbs: Crumb[] = [
@@ -33,8 +32,8 @@ const groups = (Object.keys(faqCategories) as FaqCategory[])
   />
 
   <section class="section section-light">
-    <div class="container split">
-      <div>
+    <div class="container">
+      <div class="faq-page">
         {groups.map((group) => (
           <div class="faq-group" id={group.category}>
             <h2>{group.label}</h2>
@@ -42,20 +41,6 @@ const groups = (Object.keys(faqCategories) as FaqCategory[])
           </div>
         ))}
       </div>
-      <aside class="aside-card aside-sticky">
-        <h2>Frage nicht dabei?</h2>
-        <p>Wir beantworten Ihre Frage gern persönlich.</p>
-        <div class="aside-actions">
-          <a class="button button-primary button-large" href={business.phone.href}>
-            <Icon name="phone" />
-            Anrufen
-          </a>
-          <a class="button button-light button-large" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">
-            <Icon name="whatsapp" />
-            WhatsApp schreiben
-          </a>
-        </div>
-      </aside>
     </div>
   </section>
 
