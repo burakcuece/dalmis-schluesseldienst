@@ -10,3 +10,7 @@ upload/
 *.log
 .DS_Store
 .vercel/
+
+# Python-Cache (Skill-Skripte)
+__pycache__/
+*.pyc
