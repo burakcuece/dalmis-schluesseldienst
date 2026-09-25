@@ -24,7 +24,7 @@ export function businessSchema(): SchemaNode {
     url: absoluteUrl(),
     telephone: business.phone.international,
     email: business.email,
-    image: absoluteUrl('assets/og-dalmis.png'),
+    image: absoluteUrl('assets/og-dalmis-2026.png'),
     address: {
       '@type': 'PostalAddress',
       addressLocality: business.city,

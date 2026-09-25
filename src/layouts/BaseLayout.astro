@@ -27,7 +27,7 @@ const { title, description, path, crumbs, schema = [], noindex = false, fullTitl
 
 const pageTitle = fullTitle ?? `${title} | ${business.shortName}`;
 const canonical = absoluteUrl(path);
-const ogImage = absoluteUrl('assets/og-dalmis.png');
+const ogImage = absoluteUrl('assets/og-dalmis-2026.png');
 
 const graph = [businessSchema(), ...(crumbs && crumbs.length > 1 ? [breadcrumbSchema(crumbs)] : []), ...schema];
 const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
