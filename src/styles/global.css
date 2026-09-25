@@ -1141,60 +1141,99 @@ h3 {
   gap: 2.5rem;
 }
 
-.area-copy > p {
-  max-width: 600px;
-  color: rgba(255, 255, 255, 0.72);
+.area-copy h2 {
+  max-width: 19ch;
 }
 
-.area-copy .feature-lead {
-  color: var(--white);
+.area-copy > p {
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .area-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1.2rem;
+  gap: 0.75rem 1.4rem;
   margin-top: 1.8rem;
 }
 
-/* Orte als typografische Liste, wie auf einer Wegweisertafel */
-.area-places ul {
-  margin: 0 0 1rem;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+.area-more {
+  margin: 0.5rem 0 0;
 }
 
-.area-places li {
-  padding: 0.35rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--white);
+/* Schematische Karte: Einheiten im SVG sind Kilometer */
+.area-map {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.area-map svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
   font-family: var(--font-head);
-  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+}
+
+.map-area {
+  fill: rgba(245, 196, 0, 0.07);
+  stroke: var(--yellow);
+  stroke-dasharray: 1.2 0.9;
+  stroke-width: 0.3;
+}
+
+.map-ring-faint {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 0.15;
+}
+
+.map-radius {
+  fill: var(--yellow);
+  font-size: 2.2px;
   font-weight: 700;
-  line-height: 1.15;
 }
 
-.area-places .area-home {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--yellow);
+.map-landmark circle {
+  fill: rgba(255, 255, 255, 0.38);
 }
 
-.area-places .area-home small {
-  color: rgba(255, 255, 255, 0.6);
+.map-landmark text {
+  fill: rgba(255, 255, 255, 0.5);
   font-family: var(--font);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 2.1px;
 }
 
-.area-places p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
+.map-place circle {
+  fill: var(--white);
+}
+
+.map-place text {
+  fill: var(--white);
+  font-size: 2.7px;
+  font-weight: 700;
+}
+
+.map-home circle {
+  fill: var(--yellow);
+}
+
+.map-home .map-home-halo {
+  fill: rgba(245, 196, 0, 0.25);
+}
+
+.map-home text {
+  fill: var(--yellow);
+  font-size: 3.4px;
+  font-weight: 800;
+}
+
+.area-map figcaption {
+  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.82rem;
+  text-align: center;
 }
 
 /* --------------------------------------------------------------------------
@@ -1949,7 +1988,7 @@ h3 {
   }
 
   .area-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     align-items: center;
     gap: clamp(3rem, 7vw, 6.5rem);
   }
